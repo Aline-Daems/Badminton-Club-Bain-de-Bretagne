@@ -20,9 +20,9 @@
 			} elseif(empty($message)) {
 				$topicErrorMessage = "You must write a message !";
 			} else {
-				$newTopicQuery = "INSERT INTO topics (topicTitle, topicForumId, topicAuthorId) VALUES (?, ?, ?)";
-				$newTopicResult = $bdd->prepare($newTopicQuery);
-				$newTopicResult->execute([$title, $forumId, $_SESSION["userId"]]);
+				$newTopicQuery = "INSERT INTO topics (topicTitle, topicForumId, topicAuthorId, isLocked) VALUES (?, ?, ?, ?)";
+                $newTopicResult = $bdd->prepare($newTopicQuery);
+                $newTopicResult->execute([$title, $forumId, $_SESSION["userId"]], 0);
 
 				$getNewTopicQuery = "SELECT topicId FROM topics WHERE topicTitle = ?";
 				$getNewTopicResult = $bdd->prepare($getNewTopicQuery);
