@@ -45,7 +45,7 @@ if (isset($_POST['validateone'])){
                 <?php if (isset($succesMessageaside)) { ?> <p style="color: green;"><?= $succesMessageaside ?></p> <?php } ?>
                     <!-----------USERNAME-------------->
                     <h3 class="titlelogin">Login</h3>
-                <form action="index.php" method="POST" name="aside">
+                <form action="register.php" method="POST" name="aside">
                   </br>
                   <div class="w-100 col-auto">
                     <label>Username</label>
