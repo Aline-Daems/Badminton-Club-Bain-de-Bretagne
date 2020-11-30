@@ -19,7 +19,6 @@ if (isset($_POST['validateone'])){
         if ($check_presence_user->rowCount() > 0){
             $infoUser = $check_presence_user->fetch();
             /*Va permettre à l'utilidateur de rester connécté et de récupérer ses infos*/
-        
             $_SESSION['pass'] = $infoUser['pwd'];
             $_SESSION['userId'] = $infoUser['userId'];
             $_SESSION['userName'] = $infoUser['username'];
@@ -45,7 +44,7 @@ if (isset($_POST['validateone'])){
                 <?php if (isset($succesMessageaside)) { ?> <p style="color: green;"><?= $succesMessageaside ?></p> <?php } ?>
                     <!-----------USERNAME-------------->
                     <h3 class="titlelogin">Login</h3>
-                <form action="register.php" method="POST" name="aside">
+                <form action="profile.php" method="POST" name="aside">
                   </br>
                   <div class="w-100 col-auto">
                     <label>Username</label>
