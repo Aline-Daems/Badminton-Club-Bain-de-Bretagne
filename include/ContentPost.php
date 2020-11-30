@@ -5,13 +5,13 @@
 <?php $topicId = $_GET["id"]; ?>
 
 <?php 
-    $TopicTitleQuery = "SELECT topicTitle FROM topics WHERE topicId = ?";
-    $TopicTitleResult = $bdd->prepare($TopicTitleQuery);
-    $TopicTitleResult->execute(array($topicId));
-    $TopicTitle = $TopicTitleResult->fetch(PDO::FETCH_ASSOC);
+    $topicQuery = "SELECT topicTitle, topicAuthorId, isLocked FROM topics WHERE topicId = ?";
+    $topicResult = $bdd->prepare($topicQuery);
+    $topicResult->execute(array($topicId));
+    $topic = $topicResult->fetch(PDO::FETCH_ASSOC);
 ?>
 
-<div class="Topic-title"> <p><?= $TopicTitle["topicTitle"]; ?></p></div>
+<div class="Topic-title"> <p><?= $topic["topicTitle"]; ?></p></div>
 
 <div class="rules"> <p class="Text-Rules">Forum Rules </p></div> 
 
@@ -26,9 +26,13 @@
             LIMIT 1";
         $lastPosterResult = $bdd->prepare($lastPosterQuery);
         $lastPosterResult->execute(array($topicId));
-        $lastPoster = $lastPosterResult->fetch(PDO::FETCH_ASSOC);
-        if(isset($_SESSION["userId"]) 
-            AND $_SESSION["userId"] != $lastPoster["postUserId"] 
+        $lastPosterId = 0;
+        while($lastPoster = $lastPosterResult->fetch(PDO::FETCH_ASSOC)){
+            $lastPosterId = $lastPoster["postUserId"];
+        }
+        if(isset($_SESSION["userId"])
+            AND isset($lastPoster)
+            AND $_SESSION["userId"] != $lastPosterId
             AND !$topic["isLocked"]){
     ?>
         <a href="newPost.php?id=<?= $topicId; ?>" class="btn btn-primary reply"><i class="fas fa-reply"></i>
@@ -63,7 +67,7 @@
 				$authorQuery = "SELECT * FROM users WHERE userId = ?";
 				$authorResult = $bdd->prepare($authorQuery);
 				$authorResult->execute(array($postRow["postUserId"]));
-                $author = $authorResult->fetch(PDO::FETCH_ASSOC);
+                while($author = $authorResult->fetch(PDO::FETCH_ASSOC)){
 ?>
 
     <div class="rounded border container comments">
@@ -86,7 +90,7 @@
                         ?>
                         <!-- img with the URL created -->
                         <img class="avatar" src="<?php echo $grav_url; ?>" alt="picture" />
-                       
+                    
                     </div>
                 </div>   <!--END OF AVATAR PROFILE-->
         
@@ -103,7 +107,9 @@
             </div> <!-- END OF CONTENT BOX-->
         </div> <!-- END OF BOX COMMENTS -->
     </div>   <!--END OF CONTAINER COMMENTS--> 
-        <?php        
+        <?php
+                }
             }
         ?>
 </div> 
+
