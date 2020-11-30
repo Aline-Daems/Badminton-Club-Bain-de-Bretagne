@@ -11,7 +11,7 @@
     grid-template-areas:
       "picGravatar picGravatar name username modifName"
       "picGravatar picGravatar mail userEmail modifEmail"
-      "picGravatar picGravatar signature signatureTxt modfiSignature"
+      "picGravatar picGravatar signature2 signatureTxt modfiSignature"
       "ModifGravatar ModifGravatar ModifGravatar ModifGravatar ModifGravatar";
     padding: 25px;
     margin: 25px; 
@@ -25,7 +25,7 @@
   .mail { grid-area: mail;  
     font-weight: bold;}
   
-  .signature { grid-area: signature;  
+  .signature2 { grid-area: signature2;  
     font-weight: bold;}
   
   .username { grid-area: username; }

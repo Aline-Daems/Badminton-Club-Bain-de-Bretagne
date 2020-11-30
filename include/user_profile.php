@@ -10,7 +10,7 @@
         <div class="user-container">
           <div class="name">Name :</div>
           <div class="mail">Email :</div>
-          <div class="signature">Signature :</div>
+          <div class="signature2">Signature :</div>
           <div class="username"><?php if($user){echo $user["username"];} ?></div>
           <div class="userEmail"><?php if($user){echo $user['userEmail'];}?></div>
           <div class="signatureTxt"><?php if($user){echo $user['userSignature'];}?></div>

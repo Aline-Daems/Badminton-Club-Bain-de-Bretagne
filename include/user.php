@@ -7,7 +7,7 @@
         <div class="user-container">
           <div class="name">Name :</div>
           <div class="mail">Email :</div>
-          <div class="signature">Signature :</div>
+          <div class="signature2">Signature :</div>
           <div class="username"><?= $user['username'] ?></div>
           <div class="userEmail"><?= $user['userEmail'] ?></div>
           <div class="signatureTxt"><?= $user['userSignature'] ?></div>
