@@ -12,27 +12,27 @@
 
 	<div class="rules"> <p class="Text-Rules">Forum Rules </p></div> 
 	<div class="buttons">
-	<div class ="row p-2">
-		<a href=<?php
-			if(isset($_SESSION["userId"])){
-				echo "newTopic.php?id=" . $forumId; 
-			} else {
-				echo "register.php";
-			}
-			?> class="btn-success rounded-pill p-2 m-2 reply">
-			New topic
-		</a>
-		<button class="setting"><img src="pictures/icons/shuffle.svg" alt="sort"></i> </button>
-    <form>
-        <div>
-            <input type="text" id="search" name="search" value="Search this topic ..." class="search">
-        </div>
-    </form>
-    <button class="setting"><img src="pictures/icons/search.svg" alt="search"></button>
-    <button class="setting"><img src="pictures/icons/settings.svg" alt="settings"></button>  
-</div>  <!--END OF BUTTONS-->
-
+		<div class ="row p-2">
+			<a href=<?php
+				if(isset($_SESSION["userId"])){
+					echo "newTopic.php?id=" . $forumId; 
+				} else {
+					echo "register.php";
+				}
+				?> class="btn-success rounded-pill p-2 m-2 reply">
+				New topic
+			</a>
+			<button class="setting"><img src="pictures/icons/shuffle.svg" alt="sort"></i> </button>
+			<form>
+				<div>
+					<input type="text" id="search" name="search" value="Search this topic ..." class="search">
+				</div>
+			</form>
+			<button class="setting"><img src="pictures/icons/search.svg" alt="search"></button>
+			<button class="setting"><img src="pictures/icons/settings.svg" alt="settings"></button>  
+		</div>  <!--END OF BUTTONS-->
 	</div>
+
 	<div class="rounded border container">
 		<div class="forums__header row bg-success align-items-center">
 			<p class="col-9 m-0">Topics</p>

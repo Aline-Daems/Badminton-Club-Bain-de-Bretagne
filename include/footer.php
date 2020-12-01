@@ -26,7 +26,6 @@
 <!-- START OF THE FIRST GREY BACKRGOUND  -->
 
 <div class="grey">
-<?php include("include/breadcrumb.php"); ?>
 
 
 <!-- END OF THE FIRST GREY BACKGROUND -->
