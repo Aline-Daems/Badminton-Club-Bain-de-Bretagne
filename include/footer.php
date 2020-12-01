@@ -12,8 +12,6 @@
     <a href="#"><i class="fab fa-facebook-f"></i></a>
     <!-- ICON CODEPEN -->
     <a href="#"><i class="fab fa-codepen"></i></a>
-    <!-- ICON GOOGLE + -->
-    <a href="#"><i class="fab fa-google-plus-g"></i></a>
     <!-- ICON DIGG  -->
     <a href="#"><i class="fab fa-digg"></i></a>
     <!-- ICON PRINTEREST  -->
