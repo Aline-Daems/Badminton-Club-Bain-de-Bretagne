@@ -29,7 +29,7 @@
 		<label for="message" class="p-2 mt-4">Message</label>
 		<textarea maxlength="2000" id="topicMessage" name="message"></textarea>
 	
-		<button type="submit" name="postCreation" id="postCreation" class="btn-success rounded-pill w-25 m-3 mt-4 align-self-center">Create new topic</button>
+		<button type="submit" name="postCreation" id="postCreation" class="btn-success rounded-pill w-25 m-3 mt-4 align-self-center">Create new post</button>
 	</form>
 
 </div>
