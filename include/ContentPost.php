@@ -13,7 +13,8 @@
 
 <div class="Topic-title"> <p><?= $topic["topicTitle"]; ?></p></div>
 
-<div class="rules"> <p class="Text-Rules">Forum Rules </p></div> 
+<!-- BOUTON FORUM RULES -->
+<?php include "include/forum_rules.php"; ?> 
 
 <div class="buttons">
 
@@ -90,9 +91,9 @@
         <div>
             <input type="text" id="search" name="search" placeholder="Search this topic ..." class="search">
         </div>
-        <button class="setting"><img src="pictures/icons/search.svg" alt="search"></button>
+        <button class="setting"><img class="settingIcon" src="pictures/icons/search.svg" alt="search"></button>
     </form>
-    <button class="setting"><img src="pictures/icons/settings.svg" alt="settings"></button>
+    <button class="setting"><img class="settingIcon" src="pictures/icons/settings.svg" alt="settings"></button>
 </div>  <!--END OF BUTTONS-->
 
 <?php

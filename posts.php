@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php include("include/head.php"); ?>
+    <?php include("include/head.php"); ?>
+    <link rel="stylesheet" href="sass/posts.css">
 </head>
 <body>
 
@@ -12,16 +13,15 @@
 
     <main class="background">
     <!-- NAV BAR  -->
- <?php include("include/breadcrumb.php"); ?>
+    <?php include("include/breadcrumb.php"); ?>
     <div class="container-fluid row align-items-start">
-   
 
       <!-- CATEGORIES -->
       <?php include("include/ContentPost.php"); ?>
 
       <!-- aside -->
       <?php include("include/aside.php"); ?>
-    </div>
+      </div>
 </main>
     <!-- END OF PAGE CONTENT -->
 

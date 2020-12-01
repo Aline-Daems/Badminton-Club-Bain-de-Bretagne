@@ -1,4 +1,3 @@
-
 <div class="Breadcrumb p-3">
 
 <?php
@@ -31,7 +30,7 @@
 			$forum = getForum($topic["topicForumId"]);
 			?>
 				<p>
-					<a href="index.php"> Accueil </a>
+					<a href="index.php"> Home </a>
 					>
 					<a href="forum.php?id=<?= $topic["topicForumId"]; ?>"> <?= $forum["forumName"]; ?> </a>
 					>
@@ -45,27 +44,34 @@
 			$forum = getForum($id);
 			?>
 				<p>
-					<a href="index.php"> Accueil </a>
+					<a href="index.php"> Home </a>
 					>
 					<a href="forum.php?id=<?= $id; ?>"> <?= $forum["forumName"]; ?> </a>
 				</p>
 			<?php
 			break;
 		case "profile":
-			$position = "post";
 			?>
 				<p>
-					<a href="index.php"> Accueil </a>
+					<a href="index.php"> Home </a>
 					>
-					<a href="profile.php"> profil </a>
+					<a href="profile.php"> Profile </a>
+				</p>
+			<?php
+			break;
+		case "register":
+			?>
+				<p>
+					<a href="index.php"> Home </a>
+					>
+					<a href="register.php"> Register </a>
 				</p>
 			<?php
 			break;
 		default:
-			$position = "post";
 			?>
 				<p>
-					<a href="index.php"> Accueil </a>
+					<a href="index.php"> Home </a>
 				</p>
 			<?php
 	}
