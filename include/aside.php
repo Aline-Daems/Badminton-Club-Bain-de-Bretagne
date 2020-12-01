@@ -42,6 +42,10 @@ if (isset($_POST['validateone'])){
                   <!-----------Message-------------->
                 <?php if (isset($errorMessageaside)) { ?> <p style="color: red;"><?= $errorMessageaside ?></p> <?php } ?>
                 <?php if (isset($succesMessageaside)) { ?> <p style="color: green;"><?= $succesMessageaside ?></p> <?php } ?>
+                
+                <!--- Are you connected? No = login or register. Yes = see your profile page --->
+                <?php if (empty($_SESSION['userId'])){
+                ?> 
                     <!-----------USERNAME-------------->
                     <h3 class="titlelogin">Login</h3>
                 <form action="index.php" method="POST" name="aside">
@@ -64,16 +68,27 @@ if (isset($_POST['validateone'])){
                 </form>
                 </br>
             <!-----------NEW MEMBER-------------->
-            <h3 class="Become">Become a member</h3>
-            <button type="submit" name="becomeaMembre" class="w-100 btn btn-success">
-            <?php echo "<a href='register.php'> <strong>Sign up</strong> ! </a>" ?>
-            </button>
-            </br>
-            </br>
-            <h3 class="Become">My profile</h3>
-            <button type="submit" name="myProfil" class="w-100 btn btn-success">
-            <?php echo "<a href='profile.php'> <strong>Complete your profile !</strong> </a>" ?>
-            </button>
+            
+                <h3 class="Become">Become a member</h3>
+                <button type="submit" name="becomeaMembre" class="w-100 btn btn-success">
+                <?php echo "<a href='register.php'> <strong>Sign up</strong> ! </a>" ?>
+                </button>
+                </br>
+            <?php 
+            }else{
+            ?>
+                </br>
+                <h3 class="Become">My profile</h3>
+                <button type="submit" name="myProfil" class="w-100 btn btn-success">
+                <?php echo "<a href='profile.php'> <strong>Complete your profile !</strong> </a>" ?>
+                </button><br /><br />
+                <button type="submit" name="myProfil" class="w-100 btn btn-success">
+                <?php echo "<a href='destroy_session.php'> <strong>Log out</strong> </a>" ?>
+                </button>
+            <?php 
+            }
+            ?>
+            
 
       <!-----------LAST POSTS -------------->
           <h3 class="titlelastPost">Last Post</h3> 
