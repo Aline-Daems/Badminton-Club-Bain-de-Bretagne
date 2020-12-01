@@ -136,11 +136,11 @@ if (isset($_POST['validateone'])){
                 <?php
                         $email = $userpost["userEmail"]; 
                         $default = "https://cdn1.iconfinder.com/data/icons/sport-avatar-7/64/05-sports-badminton-sport-avatar-player-512.png";
-                        $size = 120;
-                        $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
+                        
+                        $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default );
                 ?>
                         <!-- img with the URL created -->
-                        <img class="avatar" src="<?php echo $grav_url; ?>" alt="picture" />
+                        <img class="newmember" src="<?php echo $grav_url; ?>" alt="picture" />
                 </p>
                 </div>
               </div>
