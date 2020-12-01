@@ -27,7 +27,7 @@ aside a:hover{
     text-align: center;
   }
 
-  aside h4{
+  aside .h4{
     text-align: center;
     color:#02933d;
   }
@@ -48,6 +48,6 @@ aside a:hover{
     color: white;
   }
 
-  aside .newmember{
+  aside .newmemberPic{
     width: 50px;
   }

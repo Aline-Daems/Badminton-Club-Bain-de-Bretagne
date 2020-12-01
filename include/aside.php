@@ -131,7 +131,7 @@ if (isset($_POST['validateone'])){
               <div class="card bg-light mb-3 lastpost">
                 <div class="card-body">
                 <p class="card-text gravatarimg">
-                <h4><?= $userpost['username']; ?></h4>
+                <p class="h4"><?= $userpost['username']; ?></p>
                 <br />
                 <?php
                         $email = $userpost["userEmail"]; 
@@ -140,7 +140,7 @@ if (isset($_POST['validateone'])){
                         $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default );
                 ?>
                         <!-- img with the URL created -->
-                        <img class="newmember" src="<?php echo $grav_url; ?>" alt="picture" />
+                        <img class="newmemberPic" src="<?php echo $grav_url; ?>" alt="picture" />
                 </p>
                 </div>
               </div>
