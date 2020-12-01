@@ -4,22 +4,49 @@
 
 <?php $topicId = $_GET["id"]; ?>
 
- <?php 
- 
-$TopicTitleQuery = "SELECT topicTitle FROM topics WHERE topicId = ?";
-$TopicTitleResult = $bdd->prepare($TopicTitleQuery);
-$TopicTitleResult->execute(array($topicId));
-$TopicTitle = $TopicTitleResult->fetch(PDO::FETCH_ASSOC);
+<?php 
+    $topicQuery = "SELECT topicTitle, topicAuthorId, isLocked FROM topics WHERE topicId = ?";
+    $topicResult = $bdd->prepare($topicQuery);
+    $topicResult->execute(array($topicId));
+    $topic = $topicResult->fetch(PDO::FETCH_ASSOC);
+?>
 
- ?>
-
-<div class="Topic-title"> <p><?= $TopicTitle["topicTitle"]; ?></p></div>
+<div class="Topic-title"> <p><?= $topic["topicTitle"]; ?></p></div>
 
 <div class="rules"> <p class="Text-Rules">Forum Rules </p></div> 
 
 <div class="buttons">
 
-    <a href="newPost.php?id=<?= $topicId ?>" class="btn btn-primary reply"><i class="fas fa-reply"></i> Post Reply </a>
+    <?php
+        $lastPosterQuery =
+            "SELECT postUserId 
+            FROM posts 
+            WHERE postTopicId = ?
+            ORDER BY postId DESC 
+            LIMIT 1";
+        $lastPosterResult = $bdd->prepare($lastPosterQuery);
+        $lastPosterResult->execute(array($topicId));
+        $lastPosterId = 0;
+        while($lastPoster = $lastPosterResult->fetch(PDO::FETCH_ASSOC)){
+            $lastPosterId = $lastPoster["postUserId"];
+        }
+        if(isset($_SESSION["userId"])
+            AND isset($lastPoster)
+            AND $_SESSION["userId"] != $lastPosterId
+            AND !$topic["isLocked"]){
+    ?>
+        <a href="newPost.php?id=<?= $topicId; ?>" class="btn btn-primary reply"><i class="fas fa-reply"></i>
+            Post Reply
+        </a>
+    <?php
+        } else {
+    ?>
+        <button class="btn btn-secondary reply" disabled><i class="fas fa-reply"></i>
+            Post Reply
+        </button>
+    <?php
+        }
+    ?>
     <button class="setting"><i class="fas fa-wrench"></i> </button>
     <form>
         <div>
@@ -31,25 +58,16 @@ $TopicTitle = $TopicTitleResult->fetch(PDO::FETCH_ASSOC);
     <button class="setting"> <i class="fas fa-cog"></i></button>  
 </div>  <!--END OF BUTTONS-->
 
-
-
-
-
-        
 <?php
 			$postQuery = "SELECT * FROM posts WHERE postTopicId = ?";
 			$postResult = $bdd->prepare($postQuery);
 			$postResult->execute(array($topicId));
             while ($postRow = $postResult->fetch(PDO::FETCH_ASSOC)) {
-				
 			
-
 				$authorQuery = "SELECT * FROM users WHERE userId = ?";
 				$authorResult = $bdd->prepare($authorQuery);
 				$authorResult->execute(array($postRow["postUserId"]));
-                $author = $authorResult->fetch(PDO::FETCH_ASSOC);
-                
-
+                while($author = $authorResult->fetch(PDO::FETCH_ASSOC)){
 ?>
 
     <div class="rounded border container comments">
@@ -72,7 +90,7 @@ $TopicTitle = $TopicTitleResult->fetch(PDO::FETCH_ASSOC);
                         ?>
                         <!-- img with the URL created -->
                         <img class="avatar" src="<?php echo $grav_url; ?>" alt="picture" />
-                       
+                    
                     </div>
                 </div>   <!--END OF AVATAR PROFILE-->
         
@@ -89,10 +107,9 @@ $TopicTitle = $TopicTitleResult->fetch(PDO::FETCH_ASSOC);
             </div> <!-- END OF CONTENT BOX-->
         </div> <!-- END OF BOX COMMENTS -->
     </div>   <!--END OF CONTAINER COMMENTS--> 
-        <?php        
+        <?php
+                }
             }
         ?>
-
-    
-
 </div> 
+
