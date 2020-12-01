@@ -123,7 +123,7 @@ if (isset($_POST['validateone'])){
 
         <!-----------LAST ACTIVE USERS -------------->
 <h3 class="newmember">New members</h3> 
-  <div class="card bg-light col-12 mb-3"> 
+  <div class="card bg-light col-12 mb-3 mt-3 p-2"> 
     <?php
     $userId = $bdd->prepare('SELECT * FROM users ORDER BY userId DESC LIMIT 3');
     $userId->execute();
@@ -133,12 +133,12 @@ if (isset($_POST['validateone'])){
       $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default );
     ?>
     <div class="container">
-      <div class="row">
+      <div class="row p-2">
         <div class="col-3 justify-content-center">
           <!-- img with the URL created -->
           <img class="newmemberPic" src="<?php echo $grav_url; ?>" alt="picture" />
         </div>
-        <div class="col-9">
+        <div class="col-9 d-flex align-items-center">
           <p class="h4"><?= $userpost['username']; ?></p>  
         </div>
       </div>

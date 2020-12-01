@@ -29,6 +29,9 @@ aside a:hover{
 
   aside .h4{
     color:#02933d;
+    font-size: 1rem;
+    font-weight: 600;
+    
   }
     /*----- Margin for a title Last Post ----*/
   aside .titlelastPost{
