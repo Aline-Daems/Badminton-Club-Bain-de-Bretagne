@@ -13,11 +13,12 @@
     <main class="background">
     <!-- NAV BAR  -->
     <?php include("include/breadcrumb.php"); ?>
+    
     <div class="container-fluid row align-items-start">
 
       <!-- CATEGORIES -->
       <?php include("include/ContentPost.php"); ?>
-    
+
       <!-- aside -->
       <?php include("include/aside.php"); ?>
       </div>

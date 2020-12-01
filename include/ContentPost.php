@@ -13,7 +13,8 @@
 
 <div class="Topic-title"> <p><?= $topic["topicTitle"]; ?></p></div>
 
-<div class="rules"> <p class="Text-Rules">Forum Rules </p></div> 
+<!-- BOUTON FORUM RULES -->
+<?php include "include/forum_rules.php"; ?> 
 
 <div class="buttons">
 
