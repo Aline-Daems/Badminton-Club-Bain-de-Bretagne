@@ -68,7 +68,7 @@
             AND !$topic["isLocked"]){
     ?>
         <form method="post">
-            <button class="btn btn-primary reply type="submit" name="lockTopic">
+            <button class="btn btn-primary reply" type="submit" name="lockTopic">
                 Lock Topic
             </button>
         </form>
@@ -78,7 +78,7 @@
             AND $topic["isLocked"]){
     ?>
         <form method="post">
-            <button class="btn btn-primary reply type="submit" name="lockTopic">
+            <button class="btn btn-primary reply" type="submit" name="lockTopic">
                 Unlock Topic
             </button>
         </form>
