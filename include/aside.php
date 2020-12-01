@@ -47,7 +47,7 @@ if (isset($_POST['validateone'])){
                 <?php if (empty($_SESSION['userId'])){
                 ?> 
                     <!-----------USERNAME-------------->
-                    <h3 class="titlelogin">Login</h3>
+                    <h3 class="titlelogin" id="login">Login</h3>
                 <form action="index.php" method="POST" name="aside">
                   </br>
                   <div class="w-100 col-auto">
@@ -97,15 +97,17 @@ if (isset($_POST['validateone'])){
           $lastPost->execute();
 
           while ($post = $lastPost->fetch(PDO::FETCH_ASSOC)){
-            $lastTopic = $bdd->prepare('SELECT topicTitle FROM topics WHERE topicId = ?');
+            $lastTopic = $bdd->prepare('SELECT * FROM topics WHERE topicId = ?');
             $lastTopic->execute([$post['postTopicId']]);
             $topicTitle=$lastTopic->fetch(PDO::FETCH_ASSOC);
           ?>
               <div class="card bg-light mb-3 lastpost">
                 <div class="card-header headergreen">
                 <strong>
-                  <a>
-                <?=$topicTitle['topicTitle'];?> 
+                <!----- TEST ----->
+                <a class="poststitle" href="posts.php?id=<?= $topicTitle["topicId"]; ?>">
+					      <?= $topicTitle["topicTitle"]; ?>
+			        	</a>
                 </strong>
                 </div>
                 <div class="card-body">
