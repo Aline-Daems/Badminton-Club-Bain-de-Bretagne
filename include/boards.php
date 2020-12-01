@@ -1,7 +1,16 @@
 <div class="container-fluid col-12 col-md-9">
 
 	<?php
-		$boardQuery = "SELECT * FROM boards";
+	 	if (!empty($_GET['code'])){
+			$urlCode = $_GET['code'];
+		}		
+		if (isset($urlCode)){ 
+			if ($urlCode == "007"){
+			$boardQuery = "SELECT * FROM boards";
+			}
+		}else{
+			$boardQuery = "SELECT * FROM boards WHERE boardsId != 5";
+		}
 		$boardResult = $bdd->query($boardQuery);
 		while ($boardRow = $boardResult->fetch()) {
 	?>

@@ -1,4 +1,3 @@
-<div class="userContainer col-12 col-md-9">
 <?php
   $userQuery="SELECT * FROM users WHERE userId =?";
   $userResult=$bdd->prepare($userQuery);
@@ -8,7 +7,7 @@
         <div class="user-container">
           <div class="name">Name :</div>
           <div class="mail">Email :</div>
-          <div class="signature">Signature :</div>
+          <div class="signature2">Signature :</div>
           <div class="username"><?= $user['username'] ?></div>
           <div class="userEmail"><?= $user['userEmail'] ?></div>
           <div class="signatureTxt"><?= $user['userSignature'] ?></div>
@@ -21,4 +20,3 @@
             <p><a href="destroy_session.php">Log out</a></p>
           </div>
         </div>
-</div>
