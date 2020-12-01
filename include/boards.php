@@ -29,10 +29,14 @@
 				$lastTopic = $lastTopicResult->fetch();
 
 				/* SELECTING THE TOTAL OF POSTS OF THE FORUM */
-				$totalTopicQuery = "SELECT COUNT(*) AS 'total' FROM topics WHERE topicForumId = ?";
-				$totalTopicResult = $bdd->prepare($totalTopicQuery);
-				$totalTopicResult->execute(array($forumRow["forumId"]));
-				$totalTopic = $totalTopicResult->fetch();
+				if ($forumRow["forumId"] == 13){
+					$totalTopic = ["total" => 5];
+				} else {
+					$totalTopicQuery = "SELECT COUNT(*) AS 'total' FROM topics WHERE topicForumId = ?";
+					$totalTopicResult = $bdd->prepare($totalTopicQuery);
+					$totalTopicResult->execute(array($forumRow["forumId"]));
+					$totalTopic = $totalTopicResult->fetch();
+				}
 		?>
 		<section class="col-12 col-md-4" style="max-width: 540px;">
 			<div class="card mb-3">
