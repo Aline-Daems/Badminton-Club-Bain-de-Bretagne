@@ -17,6 +17,7 @@
 
 <div class="buttons">
 
+    <!-- NEW POST BUTTON -->
     <?php
         $lastPosterQuery =
             "SELECT postUserId 
@@ -47,6 +48,44 @@
     <?php
         }
     ?>
+
+    <!-- LOCK TOPIC BUTTON -->
+    <?php
+        /*BUTTON SCRIPT*/
+		if(isset($_POST["lockTopic"])){
+            $lockQuery = "UPDATE topics SET isLocked = ? WHERE topicId = ?";
+            $lockResult = $bdd->prepare($lockQuery);
+            if($topic["isLocked"]){
+                $lockResult->execute([0,$topicId]);
+            }else{
+                $lockResult->execute([1,$topicId]);
+            }
+            header("Location: posts.php?id=$topicId");
+        }
+
+        if(isset($_SESSION["userId"]) 
+            AND $topic["topicAuthorId"]==$_SESSION["userId"]
+            AND !$topic["isLocked"]){
+    ?>
+        <form method="post">
+            <button class="btn btn-primary reply type="submit" name="lockTopic">
+                Lock Topic
+            </button>
+        </form>
+    <?php
+        } elseif(isset($_SESSION["userId"]) 
+            AND $topic["topicAuthorId"]==$_SESSION["userId"]
+            AND $topic["isLocked"]){
+    ?>
+        <form method="post">
+            <button class="btn btn-primary reply type="submit" name="lockTopic">
+                Unlock Topic
+            </button>
+        </form>
+    <?php
+        }
+    ?>
+
     <button class="setting"><i class="fas fa-wrench"></i> </button>
     <form>
         <div>
@@ -111,5 +150,4 @@
                 }
             }
         ?>
-</div> 
-
+</div>

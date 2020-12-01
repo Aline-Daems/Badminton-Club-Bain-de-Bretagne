@@ -1,6 +1,15 @@
 <div class="forums container-fluid col-12 col-md-9 p-5">
 	<?php $forumId = $_GET["id"]; ?>
 
+	<?php 
+		$forumQuery = "SELECT forumName FROM forums WHERE forumId = ?";
+		$forumResult = $bdd->prepare($forumQuery);
+		$forumResult->execute([$forumId]);
+		$forum = $forumResult->fetch(PDO::FETCH_ASSOC);
+	?>
+
+	<div class="Topic-title"> <p><?= $forum["forumName"]; ?></p></div>
+
 	<div class="rules"> <p class="Text-Rules">Forum Rules </p></div> 
 	<div class="buttons">
 	<div class ="row p-2">
@@ -26,7 +35,11 @@
 			<img class="col-2 img-fluid m-0" src="pictures/icons/clock.svg" alt="last updated">
 		</div>
         <?php
-			$topicsQuery = "SELECT * FROM topics WHERE topicForumId = ?";
+			if($forumId == 13){
+				$topicsQuery = "SELECT * FROM topics WHERE topicForumId = ? ORDER BY topicId DESC LIMIT 5";
+			  } else {
+				$topicsQuery = "SELECT * FROM topics WHERE topicForumId = ? ORDER BY topicId DESC";
+			  }
 			$topicsResult = $bdd->prepare($topicsQuery);
 			$topicsResult->execute(array($forumId));
             while ($topicRow = $topicsResult->fetch(PDO::FETCH_ASSOC)) {
