@@ -122,28 +122,28 @@ if (isset($_POST['validateone'])){
         ?>
 
         <!-----------LAST ACTIVE USERS -------------->
-<h3 class="newmember">New member</h3> 
-          <?php
-          $userId = $bdd->prepare('SELECT * FROM users ORDER BY userId DESC LIMIT 3');
-          $userId->execute();
-          while ($userpost = $userId->fetch(PDO::FETCH_ASSOC)){
-          ?>
-              <div class="card bg-light mb-3 lastpost">
-                <div class="card-body">
-                <p class="card-text gravatarimg">
-                <p class="h4"><?= $userpost['username']; ?></p>
-                <br />
-                <?php
-                        $email = $userpost["userEmail"]; 
-                        $default = "https://cdn1.iconfinder.com/data/icons/sport-avatar-7/64/05-sports-badminton-sport-avatar-player-512.png";
-                        
-                        $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default );
-                ?>
-                        <!-- img with the URL created -->
-                        <img class="newmemberPic" src="<?php echo $grav_url; ?>" alt="picture" />
-                </p>
-                </div>
-              </div>
-          <?php
-          }
-        ?>
+<h3 class="newmember">New members</h3> 
+  <div class="card bg-light col-12 mb-3"> 
+    <?php
+    $userId = $bdd->prepare('SELECT * FROM users ORDER BY userId DESC LIMIT 3');
+    $userId->execute();
+    while ($userpost = $userId->fetch(PDO::FETCH_ASSOC)){
+      $email = $userpost["userEmail"]; 
+      $default = "https://cdn1.iconfinder.com/data/icons/sport-avatar-7/64/05-sports-badminton-sport-avatar-player-512.png";
+      $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default );
+    ?>
+    <div class="container">
+      <div class="row">
+        <div class="col-3 justify-content-center">
+          <!-- img with the URL created -->
+          <img class="newmemberPic" src="<?php echo $grav_url; ?>" alt="picture" />
+        </div>
+        <div class="col-9">
+          <p class="h4"><?= $userpost['username']; ?></p>  
+        </div>
+      </div>
+    </div>
+      <?php
+      }
+    ?>
+  </div>  
