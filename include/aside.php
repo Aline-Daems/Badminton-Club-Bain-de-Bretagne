@@ -19,7 +19,6 @@ if (isset($_POST['validateone'])){
         if ($check_presence_user->rowCount() > 0){
             $infoUser = $check_presence_user->fetch();
             /*Va permettre à l'utilidateur de rester connécté et de récupérer ses infos*/
-            $_SESSION['pass'] = $infoUser['pwd'];
             $_SESSION['userId'] = $infoUser['userId'];
             $_SESSION['userName'] = $infoUser['username'];
             $succesMessageaside = "Welcome ".$_SESSION['userName'];
