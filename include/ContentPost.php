@@ -108,17 +108,17 @@
                 while($author = $authorResult->fetch(PDO::FETCH_ASSOC)){
 ?>
 
-    <div class="rounded border container comments">
+    <div class="rounded  border container comments">
     
-		<div class="row bg-success align-items-center">
+		<div class="rounded-top row bg-success align-items-center">
 			<p class="col-8 m-0 date"> <?= $postRow["postDate"]; ?></p>
         </div> <!--END OF GREEN BOX WITH DATE-->
         
-		<div class="row border-top align-items-center p-1 box-comments">
-            <div class="avatar-border">
+		<div class="row rounded align-items-center p-1 box-comments">
+            <div class="avatar-border rounded">
 
                 <div class="avatar-profile">
-                    <div class="avatar">
+                    <div class="avatar mb-3">
                         <?php 
                         //call gravatar with the email from the poster-user
                         $email = $author["userEmail"]; 
@@ -127,7 +127,7 @@
                         $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
                         ?>
                         <!-- img with the URL created -->
-                        <img class="avatar" src="<?php echo $grav_url; ?>" alt="picture" />
+                        <img class="avatar rounded-lg" src="<?php echo $grav_url; ?>" alt="picture" />
                     
                     </div>
                 </div>   <!--END OF AVATAR PROFILE-->

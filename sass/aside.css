@@ -14,10 +14,10 @@ aside a:hover{
   text-decoration: none;
   }
 
-  aside .poststitle:hover{
-    color: #0056b3;
-    text-decoration: none;
-    }
+aside .poststitle:hover{
+color: #0056b3;
+text-decoration: none;
+}
 
   /*---------- TITLE ------------*/
 
