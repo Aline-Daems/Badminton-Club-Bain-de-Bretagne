@@ -27,8 +27,9 @@ $_SESSION['id'] = 173;?>
                     include("include/user_profile.php");
                 }elseif (! empty($_SESSION['userId'])){
                     include("include/user.php");
-                }else{ include("include/no_user.php");
-                    }
+                }else{ 
+                  include("include/no_user.php");
+                }
           ?>
       </div>
 
