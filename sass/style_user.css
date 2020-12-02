@@ -1,6 +1,6 @@
 
-.userContainer {
-    padding: 8Opx;
+.h2, .h4 {
+  color:#02933d;
 }
 
 .user-container {
@@ -11,12 +11,12 @@
     grid-template-areas:
       "picGravatar picGravatar name username modifName"
       "picGravatar picGravatar mail userEmail modifEmail"
-      "picGravatar picGravatar signature2 signatureTxt modfiSignature"
+      "picGravatar picGravatar signature2 signatureTxt modifSignature"
       "ModifGravatar ModifGravatar ModifGravatar ModifGravatar ModifGravatar";
     padding: 25px;
     margin: 25px; 
     border: 1px solid #ced4da;
-    border-radius: 5px;
+
   }
   
   .name { grid-area: name; 
@@ -40,7 +40,7 @@
   
   .modifEmail { grid-area: modifEmail; }
   
-  .modfiSignature { grid-area: modfiSignature; }
+  .modifSignature { grid-area: modifSignature; }
   
   .ModifGravatar { grid-area: ModifGravatar; 
     margin-top: 25px;
