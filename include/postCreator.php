@@ -1,6 +1,7 @@
 <div class="container-fluid col-12 col-md-9 p-5">
 
-<div class="rules"> <p class="Text-Rules">Forum Rules </p></div> 
+<!-- BOUTON FORUM RULES -->
+<?php include "include/forum_rules.php"; ?> 
 
 	<?php 
 		$topicId = $_GET["id"];
