@@ -114,7 +114,7 @@
 			<p class="col-8 m-0 date"> <?= $postRow["postDate"]; ?></p>
         </div> <!--END OF GREEN BOX WITH DATE-->
         
-		<div class="row rounded p-2 box-comments">
+		<div class="row rounded box-comments">
             <div class="avatar-border rounded">
 
                 <div class="avatar-profile">
@@ -140,7 +140,7 @@
             
 
             </div>   <!-- END OF AVATAR BOX -->
-            <div class="content" style="position:relative;">
+            <div class="content p-2" style="position:relative;">
             <p class="col-12 m-0 divider p-2" <?= $postRow["postId"]; ?>><?= Michelf\MarkdownExtra::defaultTransform($postRow['postContent']); ?></p>
         
             <div class="text-center">
