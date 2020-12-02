@@ -141,9 +141,9 @@
 
             </div>   <!-- END OF AVATAR BOX -->
             <div class="content p-2" style="position:relative;">
-            <p class="col-12 m-0 divider p-2" <?= $postRow["postId"]; ?>><?= Michelf\MarkdownExtra::defaultTransform($postRow['postContent']); ?></p>
+            <p class="col-12 m-0 p-2" <?= $postRow["postId"]; ?>><?= Michelf\MarkdownExtra::defaultTransform($postRow['postContent']); ?></p>
         
-            <div class="text-center">
+            <div class="text-center divider">
                 <p class="signature mt-4"><?=  Michelf\MarkdownExtra::defaultTransform($author["userSignature"]); ?> </p>
             </div>
             
