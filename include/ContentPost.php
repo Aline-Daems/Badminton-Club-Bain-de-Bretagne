@@ -16,7 +16,7 @@
 <!-- BOUTON FORUM RULES -->
 <?php include "include/forum_rules.php"; ?> 
 
-<div class="buttons">
+<div class="buttons d-flex align-items-stretch">
 
     <!-- NEW POST BUTTON -->
     <?php
@@ -43,7 +43,7 @@
     <?php
         } else {
     ?>
-        <button class="btn btn-secondary reply" disabled><i class="fas fa-reply"></i>
+        <button class="btn btn-secondary p-0" disabled><i class="fas fa-reply"></i>
             Post Reply
         </button>
     <?php
@@ -114,7 +114,7 @@
 			<p class="col-8 m-0 date"> <?= $postRow["postDate"]; ?></p>
         </div> <!--END OF GREEN BOX WITH DATE-->
         
-		<div class="row rounded align-items-center p-1 box-comments">
+		<div class="row rounded p-2 box-comments">
             <div class="avatar-border rounded">
 
                 <div class="avatar-profile">
@@ -131,14 +131,17 @@
                     
                     </div>
                 </div>   <!--END OF AVATAR PROFILE-->
-        
-            <p class="col-2 m-0"> 
-                <a  class="profile" href="profile.php?id=<?= $author["userId"]; ?>"><?= $author["username"]; ?></a>
-            </p>
+
+            <!--- PSEUDO ET TODO : RANK" ---> 
+            <div class="d-flex align-items-center col-12 justify-content-center">
+                <a  class="profile m-0" href="profile.php?id=<?= $author["userId"]; ?>"><?= $author["username"]; ?></a>
+            </div>
+            
+            
 
             </div>   <!-- END OF AVATAR BOX -->
-            <div class="content">
-            <p class="col-8 m-0" <?= $postRow["postId"]; ?>><?= $postRow["postContent"]; ?></p>
+            <div class="content" style="position:relative;">
+            <p class="col-12 m-0 divider p-2" <?= $postRow["postId"]; ?>><?= $postRow["postContent"]; ?></p>
         
         
             <p class="signature"><?= $author["userSignature"]; ?> </p>
