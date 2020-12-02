@@ -4,18 +4,10 @@
  
   <div class="gradient">
     <div class="icon">
-    <!-- ICON TWITTER -->
-    <a href="#"><i class="fab fa-twitter"></i> </a>
-    <!-- ICON APPLE -->
-    <a href="#"><i class="fab fa-apple"></i></a>
-    <!-- ICON FACEBOOK -->
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <!-- ICON CODEPEN -->
-    <a href="#"><i class="fab fa-codepen"></i></a>
-    <!-- ICON DIGG  -->
-    <a href="#"><i class="fab fa-digg"></i></a>
-    <!-- ICON PRINTEREST  -->
-    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+    <a href="#"><img class="mediaIcon" src="pictures/icons/facebook.svg" alt="facebook"></a>
+    <a href="#"><img class="mediaIcon" src="pictures/icons/twitter.svg" alt="twitter"></a>
+    <a href="#"><img class="mediaIcon" src="pictures/icons/github.svg" alt="github"></a>
+    <a href="#"><img class="mediaIcon" src="pictures/icons/rss.svg" alt="rss"></a>
   </div>
   </div>
   
@@ -29,19 +21,32 @@
 
 
 <!-- END OF THE FIRST GREY BACKGROUND -->
-<div class="Little-Icons">
+<div class="footer-links d-flex justify-content-center">
     <!-- CONTACT -->
-    <a href="#"> <i class="fas fa-envelope"></i> Contact us </a>
+    <a href="#" class="ml-2 mr-2">
+      <img class="settingIcon-footer" src="pictures/icons/mail-send-line.svg" alt="">
+      Contact us
+    </a>
     <!-- TEAM -->
-    <a href="#">  <i class="fas fa-shield-alt"></i> The team </a>
+    <a href="#" class="ml-2 mr-2">
+      <img class="settingIcon-footer" src="pictures/icons/team-line.svg" alt="">
+      The team
+    </a>
     <!-- TERMS -->
-    <a href="#"> Terms <i class="fas fa-check"></i></a>
+    <a href="#" class="ml-2 mr-2">
+      <img class="settingIcon-footer" src="pictures/icons/check-line.svg" alt="">
+      Terms
+    </a>
     <!-- PRIVACY  -->
-    <a href="#"> <i class="fas fa-lock"></i> Privacy </a>
+    <a href="#" class="ml-2 mr-2">
+      <img class="settingIcon-footer" src="pictures/icons/shield-check-line.svg" alt="">
+      Privacy
+    </a>
     <!-- MEMBERS -->
-    <a href="#"><i class="fas fa-user"></i> Members  </a>
-    <!-- DELETE MEMBERS -->
-    <a href="#"> <i class="far fa-trash-alt"></i> Delete members </a>
+    <a href="#" class="ml-2 mr-2">
+      <img class="settingIcon-footer" src="pictures/icons/group-line.svg" alt="">
+      Members
+    </a>
 </div>
 </div>
     <!-- UTC  -->
@@ -55,3 +60,4 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 </footer>
+

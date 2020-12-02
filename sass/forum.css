@@ -1,7 +1,3 @@
-.forums img{
-	height: 1rem;
-}
-
 .forums__header{
 	height: 3rem;
 }
@@ -9,3 +5,4 @@
 .smaller{
 	font-size: 0.8rem !important;
 }
+
