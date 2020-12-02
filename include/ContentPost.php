@@ -143,8 +143,8 @@
             <div class="content" style="position:relative;">
             <p class="col-12 m-0 divider p-2" <?= $postRow["postId"]; ?>><?= $postRow["postContent"]; ?></p>
         
-            <div class="d-flex align-items-center justify-center">
-                <p class="signature mt-3"><?= $author["userSignature"]; ?> </p>
+            <div class="text-center">
+                <p class="signature mt-4"><?= $author["userSignature"]; ?> </p>
             </div>
             
             </div> <!-- END OF CONTENT BOX-->
