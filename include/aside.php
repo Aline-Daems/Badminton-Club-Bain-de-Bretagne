@@ -111,8 +111,8 @@ if (isset($_POST['validateone'])){
                 </div>
                 <div class="card-body">
                 <p class="card-text">
-                <?= $post['postContent']; ?>
-                <br />
+                    <?= Michelf\MarkdownExtra::defaultTransform($post['postContent']); ?>
+                    <br />
                 </p>
                 </div>
               </div>

@@ -141,10 +141,10 @@
 
             </div>   <!-- END OF AVATAR BOX -->
             <div class="content" style="position:relative;">
-            <p class="col-12 m-0 divider p-2" <?= $postRow["postId"]; ?>><?= $postRow["postContent"]; ?></p>
+            <p class="col-12 m-0 divider p-2" <?= $postRow["postId"]; ?>><?= Michelf\MarkdownExtra::defaultTransform($post['postContent']); ?></p>
         
             <div class="text-center">
-                <p class="signature mt-4"><?= $author["userSignature"]; ?> </p>
+                <p class="signature mt-4"><?=  Michelf\MarkdownExtra::defaultTransform($author["userSignature"]); ?> </p>
             </div>
             
             </div> <!-- END OF CONTENT BOX-->
