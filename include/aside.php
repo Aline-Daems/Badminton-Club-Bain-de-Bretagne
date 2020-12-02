@@ -139,7 +139,7 @@ if (isset($_POST['validateone'])){
           <img class="newmemberPic" src="<?php echo $grav_url; ?>" alt="picture" />
         </div>
         <div class="col-9 d-flex align-items-center">
-          <a  class="profile h4 poststitle" href="profile.php?id=<?= $author["userId"]; ?>"><?= $userpost['username']; ?></a>  
+          <a  class="profile h4 poststitle" href="profile.php?id=<?= $userpost["userId"]; ?>"><?= $userpost['username']; ?></a>  
         </div>
       </div>
     </div>
