@@ -33,8 +33,12 @@
 	<div class="rounded border container">
 		<div class="forums__header row bg-success align-items-center">
 			<p class="col-9 m-0">Topics</p>
-			<img class="col-1 img-fluid m-0 settingIcon" src="pictures/icons/message-circle.svg" alt="msg">
-			<img class="col-2 img-fluid m-0 settingIcon" src="pictures/icons/clock.svg" alt="last updated">
+			<div class="col-1 d-flex justify-content-center">
+				<img class="m-0 settingIcon" src="pictures/icons/message-circle.svg" alt="msg">
+			</div>
+			<div class="col-2 d-flex justify-content-center">
+				<img class="m-0 settingIcon" src="pictures/icons/clock.svg" alt="last updated">
+			</div>
 		</div>
         <?php
 			if($forumId == 13){
