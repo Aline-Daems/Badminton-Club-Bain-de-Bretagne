@@ -30,9 +30,9 @@
 
   <!-- FOOTER  -->
   <?php include("include/footer.php"); ?>
-
   <script>
-    var simplemde = new SimpleMDE({ element: document.getElementById("topicMessage") });
-</script>
+    const simplemde = new SimpleMDE({ element: document.getElementById("postMessage") });
+  </script>
 </body>
 </html>
+
