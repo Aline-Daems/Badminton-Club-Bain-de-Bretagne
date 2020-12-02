@@ -4,10 +4,8 @@
 	 	if (!empty($_GET['code'])){
 			$urlCode = $_GET['code'];
 		}		
-		if (isset($urlCode)){ 
-			if ($urlCode == "007"){
+		if (isset($urlCode) AND ($urlCode == "007")){ 
 			$boardQuery = "SELECT * FROM boards";
-			}
 		}else{
 			$boardQuery = "SELECT * FROM boards WHERE boardsId != 5";
 		}
