@@ -4,7 +4,7 @@
 		$newSignatureQuery = "UPDATE users SET userSignature = ? WHERE userId = ?";
 		$newSignatureResult = $bdd->prepare($newSignatureQuery);
 		$newSignatureResult->execute([$_POST['userSignature'], $_SESSION['userId']]);
-		$_SESSION["message1"] = "Informations updated";
+		$_SESSION["successMessageSignature"] = "Informations updated";
 		header("Location: profile.php");
 		exit(0);
 	}
@@ -18,7 +18,7 @@
 		} else {
 			$newPwdQuery = "UPDATE users SET pwd = ? WHERE userId = ?";
 			$newPwdResult = $bdd->prepare($newPwdQuery);
-			$_SESSION["message2"] = "Informations updated";
+			$_SESSION["succesMessagePassword"] = "Informations updated";
 			$newPwdResult->execute([$pwd, $_SESSION['userId']]);
 			header("Location: profile.php");
 			exit(0);
@@ -34,7 +34,7 @@
 			$errorMessageChange1 = "Username already taken !";
 		} else {
 			$newUsernameQuery = "UPDATE users SET username = ? WHERE userId = ?";
-			$_SESSION["message3"] = "Informations updated";
+			$_SESSION["sucessMessageUsername"] = "Informations updated";
 			$newUsernameResult = $bdd->prepare($newUsernameQuery);
 			$newUsernameResult->execute([$_POST['username'], $_SESSION['userId']]);
 			header("Location: profile.php");
@@ -48,7 +48,7 @@
 	
 	<!-- Changer le pseudo  -->
 	<form method="post" class="card rounded m-3 d-flex flex-column p-3"> 
-	<?php if (isset($_SESSION["message3"])){ ?> <p style="color: green;"> <?php echo $_SESSION["message3"]; ?> </p> <?php unset($_SESSION["message3"]); } ?>
+	<?php if (isset($_SESSION["sucessMessageUsername"])){ ?> <p style="color: green;"> <?php echo $_SESSION["sucessMessageUsername"]; ?> </p> <?php unset($_SESSION["sucessMessageUsername"]); } ?>
 			<label for="username" class="h4 p-2 mt-4">Change your username</label>
 			<div>
 				<input class="w-25" placeholder="Votre Pseudo" maxlength="16" id="username" name="username"></input> 
@@ -62,7 +62,7 @@
 
 	<!-- Changer le password  -->
 	<form method="post" class="card rounded m-3 d-flex flex-column p-3">
-	<?php if (isset($_SESSION["message2"])){ ?> <p style="color: green;"> <?php  echo $_SESSION["message2"]; ?> </p> <?php unset($_SESSION["message2"]); } ?>
+	<?php if (isset($_SESSION["succesMessagePassword"])){ ?> <p style="color: green;"> <?php  echo $_SESSION["succesMessagePassword"]; ?> </p> <?php unset($_SESSION["succesMessagePassword"]); } ?>
 			<label for="password" class="h4 p-2 mt-4">Change your password</label>
 			<div>
 				<input type="password" class="w-25 password-input" placeholder="Votre Password" maxlength="40"  id="pwd" name="pwd"></input>
@@ -78,7 +78,7 @@
 
 	<!-- Changer la signature  -->
 	<form method="post" class="card rounded m-3 d-flex flex-column p-3">
-	<?php if (isset($_SESSION["message1"])){ ?> <p style="color: green;"> <?php  echo $_SESSION["message1"]; ?> </p> <?php unset($_SESSION["message1"]); } ?>
+	<?php if (isset($_SESSION["successMessageSignature"])){ ?> <p style="color: green;"> <?php  echo $_SESSION["successMessageSignature"]; ?> </p> <?php unset($_SESSION["successMessageSignature"]); } ?>
 			<label for="userSignature" class="h4 p-2 mt-4">Change your signature</label>
 			<input maxlength="1000" id="userSignature" name="userSignature"></input>
 			<button value="submit" name="userSubmit" id="userSubmit" class="btn-success rounded  mt-3 align-self-center w-25">Submit</button>
