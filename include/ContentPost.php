@@ -147,10 +147,10 @@
 
             </div>   <!-- END OF AVATAR BOX -->
             <div class="content p-2" style="position:relative;">
-            <p class="col-12 m-0 p-2" <?= $postRow["postId"]; ?>><?= Michelf\MarkdownExtra::defaultTransform($postRow['postContent']); ?></p>
+            <div class="col-12 m-0 p-2" <?= $postRow["postId"]; ?>><?= Michelf\MarkdownExtra::defaultTransform($postRow['postContent']); ?></div>
         
             <div class="text-center divider">
-                <p class="signature mt-4"><?=  Michelf\MarkdownExtra::defaultTransform($author["userSignature"]); ?> </p>
+                <div class="signature mt-4"><?=  Michelf\MarkdownExtra::defaultTransform($author["userSignature"]); ?> </div>
             </div>
             
             </div> <!-- END OF CONTENT BOX-->
@@ -213,4 +213,5 @@
 
     <?php include("include/postCreator.php"); ?>
 </div>
+
 

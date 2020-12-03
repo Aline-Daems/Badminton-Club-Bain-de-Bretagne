@@ -110,10 +110,9 @@ if (isset($_POST['validateone'])){
                 </strong>
                 </div>
                 <div class="card-body">
-                <p class="card-text">
-                    <?= Michelf\MarkdownExtra::defaultTransform($post['postContent']); ?>
-                    <br />
-                </p>
+                  <div class="card-text">
+                      <?= Michelf\MarkdownExtra::defaultTransform($post['postContent']); ?>
+                  </div>
                 </div>
               </div>
           <?php
@@ -146,3 +145,4 @@ if (isset($_POST['validateone'])){
       }
     ?>
   </div>  
+

@@ -1,5 +1,4 @@
 <?php
-
   $userQuery="SELECT * FROM users WHERE userId =?";
   $userResult=$bdd->prepare($userQuery);
   $userResult->execute([$_SESSION['userId']]);
@@ -11,12 +10,10 @@
           <p class="signature2">Signature :</p>
           <p class="username"><?= $user['username'] ?></p>
           <p class="userEmail"><?= $user['userEmail'] ?></p>
-          <p class="signatureTxt"><?= $user['userSignature'] ?></p>
-          <p class="w-25 picGravatar"><?php include 'include/user_gravatar.php' ;?></p>
-          <p class="modifName"></p>
-          <p class="modifEmail"></p>
-          <p class="modifSignature"></p>
-          <p><a href="destroy_session.php">Log out</a></p>
+          <div class="signatureTxt">
+            <?= Michelf\MarkdownExtra::defaultTransform($user["userSignature"]); ?>
+          </div>
+          <p class="picGravatar"><?php include 'include/user_gravatar.php' ;?></p>
           
         </div>
         <div class="ModifGravatar">
@@ -24,4 +21,4 @@
             
         </div>
 
-<?php include "profile_editor.php"; ?>
+<?php include "modifSignatureCreator.php"; ?>
