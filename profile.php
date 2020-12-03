@@ -42,8 +42,6 @@
 
   <!-- FOOTER  -->
   <?php include("include/footer.php"); ?>
-  <script>
-    const simplemde = new SimpleMDE({ element: document.getElementById("userSignature") });
-</script>
+  <script src="script/profile.js"></script>
 </body>
 </html>
