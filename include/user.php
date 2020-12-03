@@ -1,4 +1,5 @@
 <?php
+
   $userQuery="SELECT * FROM users WHERE userId =?";
   $userResult=$bdd->prepare($userQuery);
   $userResult->execute([$_SESSION['userId']]);
@@ -23,4 +24,4 @@
             
         </div>
 
-<?php include "modifSignatureCreator.php"; ?>
+<?php include "profile_editor.php"; ?>
