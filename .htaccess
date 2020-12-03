@@ -1,1 +1,2 @@
-ErrorDocument 404 /error_400.php
+ErrorDocument 404 /error_404.php
+Options -Indexes
