@@ -34,10 +34,12 @@ https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the
 * **Emilie**   https://github.com/EmiliePieront
 
 ## Languages 
-* HTML / Bootstrap
+* HTML
 * CSS
 * PHP
 * MySQL
+* JavaScript
+* Bootstrap
 
 ## Project structure
 To come up.
