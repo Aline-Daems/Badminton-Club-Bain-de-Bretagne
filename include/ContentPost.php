@@ -41,10 +41,12 @@
                 AND $_SESSION["userId"] != $lastPosterId
                 AND !$topic["isLocked"]){
         ?>
-            <button class="btn btn-primary reply" type="button" data-toggle="collapse" data-target="#newTopicEditor" aria-expanded="false" aria-controls="newTopicEditor">
-                <img class="settingIcon-white" src="pictures/icons/share-forward-line.svg" alt="">
-                Post Reply
-            </button>
+            <a href="#newPostLink">
+                <button class="btn btn-primary reply" type="button" data-toggle="collapse" data-target="#newTopicEditor" aria-expanded="false" aria-controls="newTopicEditor">
+                    <img class="settingIcon-white" src="pictures/icons/share-forward-line.svg" alt="">
+                    Post Reply
+                </button>
+            </a>
         <?php
             } else {
         ?>
@@ -159,7 +161,7 @@
             }
         ?>
 
-    <div class="buttons d-flex align-items-stretch">
+    <div class="buttons d-flex align-items-stretch" id="newPostLink">
 
         <!-- NEW POST BUTTON -->
         <?php
@@ -211,3 +213,4 @@
 
     <?php include("include/postCreator.php"); ?>
 </div>
+
