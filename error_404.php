@@ -7,9 +7,9 @@
 <body>
 
   
-<main class="background404">
+<main class="background404" >
       <a href="./index.php"><img class="img404" src="./pictures/error404.png"></a>
-</main>
+
 
 </body>
 </html>
