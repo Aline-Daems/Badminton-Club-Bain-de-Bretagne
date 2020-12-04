@@ -5,10 +5,7 @@
     <button type="submit" name="myProfil" class="w-100 btn btn-success">
     <?php echo "<a href='index.php'> <strong>Let's go to the boards</strong> </a>" ?>
     </button>
-
-    </div>
-        <div class="picGravatar"><?php //include 'include/no_gravatar.php' ;?></div>
-    </div>
-
-
+    <button type="submit" name="myProfil" class="w-100 btn btn-success">
+    <a href="<?php echo $_SERVER["HTTP_REFERER"]; ?>"><strong>Previous page</strong></a>
+    </button>
     

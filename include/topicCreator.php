@@ -1,9 +1,12 @@
 <div class="container-fluid col-12 col-md-9 p-5">
 
 <!-- BOUTON FORUM RULES -->
-<?php include "include/forum_rules.php"; ?> 
+<?php if (empty($_SESSION['userId'])){
+	include("include/no_session.php");
+	}else{
 
-	<?php 
+		include "include/forum_rules.php";
+		
 		$forumId = $_GET["id"];
 		$topicErrorMessage=" ";
 
@@ -51,6 +54,6 @@
 	
 		<button type="submit" name="topicCreation" id="topicCreation" class="btn-success rounded-pill w-25 m-3 mt-4 align-self-center">Create new topic</button>
 	</form>
-
+	<?php } ?>
 </div>
 

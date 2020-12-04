@@ -41,4 +41,8 @@
   
   .modifSignature { grid-area: modifSignature; }
 
+  .ModifGravatar {
+    margin-top: 25px;
+    text-align: center;
+    }
 

@@ -5,10 +5,9 @@
 .noPost{
 	text-align: center;
 	display: block;
-	margin-top: 60px;
 	margin-left: auto;
 	margin-right: auto;	
-	width: 66vh;
+	width: 66%;
 }
 
 .noPost a{
@@ -20,4 +19,11 @@
 	color:white;
 	text-decoration: none;
 	}
-	
+
+.noPost .btn{
+	margin-bottom: 20px;
+}
+
+.noPost .Become{
+	margin-bottom: 50px;
+}

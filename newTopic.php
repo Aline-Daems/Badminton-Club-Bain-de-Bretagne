@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
 <?php include("include/head.php"); ?>
+<link rel="stylesheet" href="sass/posts.css">
 </head>
 <body>
 
@@ -19,7 +20,6 @@
 
       <!-- CATEGORIES -->
       <?php include("include/topicCreator.php"); ?>
-
       <!-- aside -->
       <?php include("include/aside.php"); ?>
     </div>
