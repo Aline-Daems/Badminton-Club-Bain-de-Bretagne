@@ -4,6 +4,7 @@
 <head>
 <?php include("include/head.php");?>
 <link rel="stylesheet" href="sass/style_user.css">
+<link rel="stylesheet" href="sass/posts.css">
 </head>
 <body>
 
@@ -42,6 +43,8 @@
 
   <!-- FOOTER  -->
   <?php include("include/footer.php"); ?>
-  <script src="script/profile.js"></script>
+  <script>
+    const simplemde = new SimpleMDE({ element: document.getElementById("userSignature") });
+</script>
 </body>
 </html>

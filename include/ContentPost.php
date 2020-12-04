@@ -9,6 +9,8 @@
         $topicResult = $bdd->prepare($topicQuery);
         $topicResult->execute(array($topicId));
         $topic = $topicResult->fetch(PDO::FETCH_ASSOC);
+
+if($topic){
     ?>
 
     <div class="Topic-title"> <p><?= $topic["topicTitle"]; ?> <?php
@@ -147,10 +149,10 @@
 
             </div>   <!-- END OF AVATAR BOX -->
             <div class="content p-2" style="position:relative;">
-            <div class="col-12 m-0 p-2" <?= $postRow["postId"]; ?>><?= Michelf\MarkdownExtra::defaultTransform($postRow['postContent']); ?></div>
+            <p class="col-12 m-0 p-2" <?= $postRow["postId"]; ?>><?= Michelf\MarkdownExtra::defaultTransform($postRow['postContent']); ?></p>
         
             <div class="text-center divider">
-                <div class="signature mt-4"><?=  Michelf\MarkdownExtra::defaultTransform($author["userSignature"]); ?> </div>
+                <p class="signature mt-4"><?=  Michelf\MarkdownExtra::defaultTransform($author["userSignature"]); ?> </p>
             </div>
             
             </div> <!-- END OF CONTENT BOX-->
@@ -211,7 +213,10 @@
         ?>
     </div>
 
-    <?php include("include/postCreator.php"); ?>
+    <?php include("include/postCreator.php");
+}else{
+    include("include/no_post.php");
+}
+    ?>
 </div>
-
 

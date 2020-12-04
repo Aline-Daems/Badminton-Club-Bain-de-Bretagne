@@ -6,6 +6,7 @@
 		$forumResult = $bdd->prepare($forumQuery);
 		$forumResult->execute([$forumId]);
 		$forum = $forumResult->fetch(PDO::FETCH_ASSOC);
+if($forum){
 	?>
 
 	<div class="Topic-title"> <p><?= $forum["forumName"]; ?></p></div>
@@ -113,6 +114,10 @@
 		</a>
 		<button class="m-2 setting">Tri</button>
 	</div>
-
+	<?php
+}else{
+    include("include/no_post.php");
+}
+?>
 </div>
 

@@ -13,11 +13,23 @@
     <!-- PAGE CONTENT  -->
     <main class="background">
         <!-- NAV BAR  -->
-        <?php include("include/breadcrumb.php"); ?>
+        <?php $topicId = $_GET["id"]; 
+                $topicQuery = "SELECT topicTitle, topicAuthorId, isLocked FROM topics WHERE topicId = ?";
+                $topicResult = $bdd->prepare($topicQuery);
+                $topicResult->execute(array($topicId));
+                $topic = $topicResult->fetch(PDO::FETCH_ASSOC);
+        
+        if($topic){ 
+             include("include/breadcrumb.php");
+            }
+        ?>
         <div class="container-fluid row align-items-start">
             <!-- CATEGORIES -->
-            <?php include("include/ContentPost.php"); ?>
-            
+            <?php if (! empty($_GET['id'])){
+                include("include/ContentPost.php");
+            }else{ 
+                header('Location: index.php');
+            } ?>
             <!-- ASIDE -->
             <?php include("include/aside.php"); ?>
         </div>

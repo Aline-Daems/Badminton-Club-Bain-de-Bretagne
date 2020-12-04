@@ -1,0 +1,23 @@
+.settingIcon{
+	height: 1rem;
+}
+
+.noPost{
+	text-align: center;
+	display: block;
+	margin-top: 60px;
+	margin-left: auto;
+	margin-right: auto;	
+	width: 66vh;
+}
+
+.noPost a{
+	color: white;
+	text-decoration: none;
+	}
+  
+.noPost a:hover{
+	color:white;
+	text-decoration: none;
+	}
+	
