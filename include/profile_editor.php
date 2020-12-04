@@ -45,39 +45,60 @@
 
 <div class="card m-4">
 	<p class="h2 text-center mt-3">Change your informations</p>
+	<div class="card-body row"> 
+		<div class="col">
 	
+			<!-- Changer la photo de profil --> 
+			<form method="POST" class="rounded m-3 d-flex flex-column p-1" enctype="multipart/form-data"> 
+				<label for="profileImg" class="h4 p-2 mt-2">Change your profile image</label>
+				<div class="custom-file">
+					<input type="file" name="fileUpload" class="custom-file-input" id="chooseFile">
+					<label class="custom-file-label" for="chooseFile">Select file</label>
+				</div>
+				<button value="submit" name="fileUpload" id="upload" class="btn-success rounded  mt-3">Submit</button>
+			</form> 
+		</div>
+
 	<!-- Changer le pseudo  -->
-	<form method="post" class="card rounded m-3 d-flex flex-column p-3"> 
+		<div class="col">
+			<form method="post" class="rounded m-3 d-flex flex-column p-1 "> 
 	<?php if (isset($_SESSION["sucessMessageUsername"])){ ?> <p style="color: green;"> <?php echo $_SESSION["sucessMessageUsername"]; ?> </p> <?php unset($_SESSION["sucessMessageUsername"]); } ?>
-			<label for="username" class="h4 p-2 mt-4">Change your username</label>
+					<label for="username" class="h4 p-2 mt-2">Change your username</label>
 			<div>
-				<input class="w-25" placeholder="Votre Pseudo" maxlength="16" id="username" name="username"></input> 
+						<input placeholder="Votre Pseudo" maxlength="16" id="username" name="username"></input> 
 				<span id="counter" class="indicator">0/16</span>
 				<?php if (isset($errorMessageChange)) { ?> <p style="color: red;"><?= $errorMessageChange ; ?></p> <?php } ?>
 				<?php if (isset($errorMessageChange1)) { ?> <p style="color: red;"><?= $errorMessageChange1 ; ?></p> <?php } ?>
 			</div>
-			<button value="submit" name="usernameSubmit" id="usernameSubmit" class="btn-success rounded w-25 mt-3">Submit</button>
-			
+					<button value="submit" name="usernameSubmit" id="usernameSubmit" class="btn-success rounded  mt-3">Submit</button>
 	</form>
+		</div>
 
 	<!-- Changer le password  -->
-	<form method="post" class="card rounded m-3 d-flex flex-column p-3">
+		<div class="col"> 
+			<form method="post" class="rounded m-3 d-flex flex-column p-1">
 	<?php if (isset($_SESSION["succesMessagePassword"])){ ?> <p style="color: green;"> <?php  echo $_SESSION["succesMessagePassword"]; ?> </p> <?php unset($_SESSION["succesMessagePassword"]); } ?>
-			<label for="password" class="h4 p-2 mt-4">Change your password</label>
+					<label for="password" class="h4 p-2 mt-2">Change your password</label>
 			<div>
-				<input type="password" class="w-25 password-input" placeholder="Votre Password" maxlength="40"  id="pwd" name="pwd"></input>
+						<input type="password" class=" password-input" placeholder="Votre Password" maxlength="40"  id="pwd" name="pwd"></input>
 			</div>
-			<label for="password" class="h4 p-2 mt-4">Confirm Password </label><br>
+					<label for="password" class="h4 p-2 mt-2">Confirm Password </label><br>
 			<div>
-				<input type="password" placeholder="Confirmez votre Password" name="pwd-confirm" id="pwd-confirm" class=" w-25 form-control password-input" maxlength="40">
+						<input type="password" placeholder="Confirmez votre Password" name="pwd-confirm" id="pwd-confirm" class="password-input" maxlength="40">
 			</div>
-			<button value="submit" name="validatetwo" id="validatetwo" class="btn-success rounded w-25 mt-3">Submit</button>
+					<button value="submit" name="validatetwo" id="validatetwo" class="btn-success rounded  mt-3">Submit</button>
 			<?php if (isset($errorMessageChange3)) { ?> <p style="color: red;"><?= $errorMessageChange3 ; ?></p> <?php } ?>
 			<?php if (isset($errorMessageChange4)) { ?> <p style="color: red;"><?= $errorMessageChange4 ; ?></p> <?php } ?>
 	</form>
+		</div>
+	</div>
+	
+	<div class="card-body text-center p-3">
+        If you want to use Gravatar for your profile picture, please connect your profile with the same email address used on <a href="https://www.gravatar.com" target="_blank">gravatar.com</a>
+    </div>
 
 	<!-- Changer la signature  -->
-	<form method="post" class="card rounded m-3 d-flex flex-column p-3">
+	<form method="post" class="card-body rounded m-3 d-flex flex-column p-3">
 	<?php if (isset($_SESSION["successMessageSignature"])){ ?> <p style="color: green;"> <?php  echo $_SESSION["successMessageSignature"]; ?> </p> <?php unset($_SESSION["successMessageSignature"]); } ?>
 			<label for="userSignature" class="h4 p-2 mt-4">Change your signature</label>
 			<input maxlength="1000" id="userSignature" name="userSignature"></input>

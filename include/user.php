@@ -14,11 +14,7 @@
             <?= Michelf\MarkdownExtra::defaultTransform($user["userSignature"]); ?>
           </div>
           <p class="picGravatar"><?php include 'include/user_gravatar.php' ;?></p>
-          
         </div>
-        <div class="ModifGravatar">
-            <p>To display your own avatar, please connect your profile with the same email address used on <a href="https://www.gravatar.com" target="_blank">gravatar.com</a></p>
+        <?php include "profile_editor.php"; ?>
             
-        </div>
 
-<?php include "profile_editor.php"; ?>
