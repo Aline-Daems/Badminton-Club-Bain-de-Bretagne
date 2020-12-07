@@ -27,3 +27,8 @@
 .noPost .Become{
 	margin-bottom: 50px;
 }
+
+.bigimg {
+	max-width: 100%;
+	height: auto;
+}
