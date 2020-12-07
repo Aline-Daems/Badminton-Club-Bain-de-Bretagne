@@ -11,7 +11,11 @@ if (isset($_POST['upload'])) {
 
     $fileextension= strtolower($fileextension);
 
+<<<<<<< HEAD
     $path='uploads/images/';
+=======
+    $path= 'uploads/images/';
+>>>>>>> d8ce289c2d85226f424c628cf2803fa0a870b6fc
     if (empty($name)){
         echo "Please choose a file";
     } else if (!empty($name)){
