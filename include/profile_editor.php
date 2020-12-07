@@ -1,5 +1,6 @@
 <?php 
 	
+
 	if(isset($_POST['userSubmit'])){  // Modify signature
 		$newSignatureQuery = "UPDATE users SET userSignature = ? WHERE userId = ?";
 		$newSignatureResult = $bdd->prepare($newSignatureQuery);
@@ -49,13 +50,14 @@
 		<div class="col">
 	
 			<!-- Changer la photo de profil --> 
-			<form method="POST" class="rounded m-3 d-flex flex-column p-1" enctype="multipart/form-data"> 
+			<form action="profile.php" method="POST" class="rounded m-3 d-flex flex-column p-1" enctype="multipart/form-data"> 
 				<label for="profileImg" class="h4 p-2 mt-2">Change your profile image</label>
+				<?php include "profilePicture.php"; ?>
 				<div class="custom-file">
-					<input type="file" name="fileUpload" class="custom-file-input" id="chooseFile">
+					<input type="file" name="file" class="custom-file-input">
 					<label class="custom-file-label" for="chooseFile">Select file</label>
 				</div>
-				<button value="submit" name="fileUpload" id="upload" class="btn-success rounded  mt-3">Submit</button>
+				<button type="submit" name="upload" value="Upload" id="upload" class="btn-success rounded  mt-3">Submit</button>
 			</form> 
 		</div>
 
