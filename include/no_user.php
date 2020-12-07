@@ -1,11 +1,13 @@
-    <div class="user-container">
-    <div class="noPost">
-        <h3 class="Become">No profil to see here</h3>
-    
-    <button type="submit" name="myProfil" class="w-100 btn btn-success">
-    <?php echo "<a href='index.php'> <strong>Let's go to the boards</strong> </a>" ?>
-    </button>
-    <button type="submit" name="myProfil" class="w-100 btn btn-success">
-    <a href="<?php echo $_SERVER["HTTP_REFERER"]; ?>"><strong>Previous page</strong></a>
-    </button>
+
+        <div class="noPost">
+            <h3 class="Become">No profile to see here</h3>
+        
+            <button type="submit" name="myProfil" class="w-100 btn btn-success">
+            <?php echo "<a href='index.php'> <strong>Let's go to the boards</strong> </a>" ?>
+            </button>
+
+            <button type="submit" name="myProfil" class="w-100 btn btn-success">
+            <a href="<?php echo $_SERVER["HTTP_REFERER"]; ?>"><strong>Previous page</strong></a>
+            </button>
+        </div>
     
