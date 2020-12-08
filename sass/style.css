@@ -264,7 +264,14 @@ text-decoration: none;
 .content {
   width: 100%;
 }
-
+.content img{
+  max-width: 100%;
+  max-height: auto;
+}
+.card-text img{
+  max-width: 100%;
+  max-height: auto;
+}
 .avatar {
   width: 120px;
   height: 120px;
