@@ -1,7 +1,7 @@
 # Badminton-Club-Bain-de-Bretagne
 BCBB - Small project about a BeCode Bulletin Board
 
-# The project ;
+# The project :
 ![Logo](pictures/favicon/favicon.ico)
 
 This forum is a small PHP project in order for our group to learn PHP, SQL and the free heroku web hosting service.

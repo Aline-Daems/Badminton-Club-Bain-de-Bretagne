@@ -119,7 +119,10 @@ if($topic){
     ?>
     <div class="rounded  border container comments">
 		<div class="rounded-top row bg-success align-items-center">
-			<p class="col-8 m-0 date"> <?= $postRow["postDate"]; ?></p>
+			<p class="col-8 m-0 date">  
+            <?= $postRow["postDate"]; $lastPostId = $postRow['postId']; $lastPostMs = $postRow['postContent']; ?>
+              <!-- Variables pour récupérer les valeurs des posts-->
+            </p>
         </div> <!--END OF GREEN BOX WITH DATE-->
         
 		<div class="row rounded box-comments">
@@ -213,10 +216,28 @@ if($topic){
         ?>
     </div>
 
+    <!-- POST EDIT BUTTON-->
+    <?php
+        if(isset($_SESSION["userId"]) AND $_SESSION['userId'] == $lastPostUserId) {
+        //postEditButton, bouton du textarea se trouve dans le fichier editPost.php
+        //isset vérifie si un utilsateur est bien connecté
+       	$_SESSION['lastPostId']=$lastPostId;
+    ?>
+        <a href="#newEditorPost">
+        <button class="btn btn-primary reply" type="button" data-toggle="collapse" data-target="#newEditorPost" aria-expanded="false" aria-controls="#newEditorPost">
+        <i class="fa fa-reply-all" aria-hidden="true"></i>
+            Edit Post
+        </button>
+        </a>
+    <?php
+        } 
+    ?>
+
     <?php include("include/postCreator.php");
 }else{
     include("include/no_post.php");
 }
     ?>
+    <?php include("include/editPost.php"); ?>
 </div>
 
