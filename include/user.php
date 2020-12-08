@@ -16,8 +16,8 @@
           <?php 
             if($user['userPicture'] == 0){ ?>
               <div class="picGravatar"><?php include 'include/user_gravatar.php' ;?></div>
-          <?php } else {// A COMPLETER ?>
-            <div><img src="uploads/images/" alt=""></div>
+          <?php } else { ?>
+            <div><img class="avatar" src="uploads/images/<?= $user['userId'];?>.png" alt=""></div>
           <?php } ?>
         </div>
 
