@@ -1,5 +1,4 @@
 <?php 
-
 if (isset($_POST['upload'])) {
     $name= $_FILES['file']['name'];
 
@@ -19,7 +18,7 @@ if (isset($_POST['upload'])) {
             echo "The file extension must be .jpg, .jpeg, .png, .gif or .bmp in order to be uploaded";
         } else if (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp") || ($fileextension == "gif")){
             if (move_uploaded_file($tmp_name, $path.$name)) {
-                echo 'Uploaded!';
+                echo 'Uploaded ' . $name;
             }
         }
     }

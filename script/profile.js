@@ -19,3 +19,4 @@ const input = document.getElementById("username");
           passwordOne !== passwordTwo ? "red" : "silver"
     );
   });
+

@@ -53,9 +53,8 @@
 			<form action="profile.php" method="POST" class="rounded m-3 d-flex flex-column p-1" enctype="multipart/form-data"> 
 				<label for="profileImg" class="h4 p-2 mt-2">Change your profile image</label>
 				<?php include "profilePicture.php"; ?>
-				<div class="custom-file">
-					<input type="file" name="file" class="custom-file-input">
-					<label class="custom-file-label" for="chooseFile">Select file</label>
+				<div class="custom-file form-group ">
+    				<input name="file" id="file" type="file" class="form-control-file">
 				</div>
 				<button type="submit" name="upload" value="Upload" id="upload" class="btn-success rounded  mt-3">Submit</button>
 			</form> 
@@ -103,7 +102,7 @@
 	<form method="post" class="card-body rounded m-3 d-flex flex-column p-3">
 	<?php if (isset($_SESSION["successMessageSignature"])){ ?> <p style="color: green;"> <?php  echo $_SESSION["successMessageSignature"]; ?> </p> <?php unset($_SESSION["successMessageSignature"]); } ?>
 			<label for="userSignature" class="h4 p-2 mt-4">Change your signature</label>
-			<input maxlength="1000" id="userSignature" name="userSignature"></input>
+			<input maxlength="500" id="userSignature" name="userSignature"></input>
 			<button value="submit" name="userSubmit" id="userSubmit" class="btn-success rounded  mt-3 align-self-center w-25">Submit</button>
 			
 	</form> 
