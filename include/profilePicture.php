@@ -16,11 +16,18 @@ if (isset($_POST['upload'])) {
     } else if (!empty($name)){
         if (($fileextension !== "jpg") && ($fileextension !== "jpeg") && ($fileextension !== "png") && ($fileextension !== "bmp") && ($fileextension !== "gif")){
             echo "The file extension must be .jpg, .jpeg, .png, .gif or .bmp in order to be uploaded";
-        } else if (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp") || ($fileextension == "gif")){
-            if (move_uploaded_file($tmp_name, $path.$name)) {
-                echo 'Uploaded ' . $name;
+        } else {
+            if($fileextension == "gif") {
+                $newNamePicture = $user['userId'].'.gif';
+                move_uploaded_file($tmp_name, $path.$newNamePicture);
+                echo 'Uploaded ';
+            } else {
+                $newNamePicture = $user['userId'].'.png';
+                move_uploaded_file($tmp_name, $path.$newNamePicture);
+                echo 'Uploaded ';
             }
         }
     }
 }
 ?>
+

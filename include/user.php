@@ -13,8 +13,13 @@
           <div class="signatureTxt">
             <?= Michelf\MarkdownExtra::defaultTransform($user["userSignature"]); ?>
           </div>
-          <p class="picGravatar"><?php include 'include/user_gravatar.php' ;?></p>
+          <?php 
+            if($user['userPicture'] == 0){ ?>
+              <div class="picGravatar"><?php include 'include/user_gravatar.php' ;?></div>
+          <?php } else {// A COMPLETER ?>
+            <div><img src="uploads/images/" alt=""></div>
+          <?php } ?>
         </div>
-        <?php include "profile_editor.php"; ?>
+
             
 

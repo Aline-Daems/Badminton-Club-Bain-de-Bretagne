@@ -27,6 +27,7 @@
                     include("include/user_profile.php");
                 }elseif (! empty($_SESSION['userId'])){
                     include("include/user.php");
+                    include("include/profile_editor.php");
                 }else{ 
                   include("include/no_user.php");
                 }
