@@ -1,7 +1,11 @@
 /*---------- LINK ------------*/
 
+aside .poststitle{
+  color:#02933d;
+}
+
 aside a{
-  color:white;
+  color: white;
   text-decoration: none;
   }
 
@@ -9,6 +13,11 @@ aside a:hover{
   color:white;
   text-decoration: none;
   }
+
+aside .poststitle:hover{
+color: #0056b3;
+text-decoration: none;
+}
 
   /*---------- TITLE ------------*/
 
@@ -18,9 +27,11 @@ aside a:hover{
     text-align: center;
   }
 
-  aside h4{
-    text-align: center;
+  aside .h4{
     color:#02933d;
+    font-size: 1rem;
+    font-weight: 600;
+    
   }
     /*----- Margin for a title Last Post ----*/
   aside .titlelastPost{
@@ -37,4 +48,8 @@ aside a:hover{
   aside .headergreentwo{
     background-color: #f9c7c7;
     color: white;
+  }
+
+  aside .newmemberPic{
+    width: 50px;
   }

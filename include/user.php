@@ -5,18 +5,21 @@
   $user=$userResult->fetch(PDO::FETCH_ASSOC);
 ?>
         <div class="user-container">
-          <div class="name">Name :</div>
-          <div class="mail">Email :</div>
-          <div class="signature2">Signature :</div>
-          <div class="username"><?= $user['username'] ?></div>
-          <div class="userEmail"><?= $user['userEmail'] ?></div>
-          <div class="signatureTxt"><?= $user['userSignature'] ?></div>
-          <div class="w-25 picGravatar"><?php include 'include/user_gravatar.php' ;?></div>
-          <div class="modifName"><a href="#">Modify your username</a></div>
-          <div class="modifEmail"><a href="#">Modify your password</a></div>
-          <div class="modfiSignature"><a href="#">Modify your signature</a></div>
-          <div class="ModifGravatar">
-            <p>To display your own avatar, please connect your profile with the same email address used on <a href="https://www.gravatar.com" target="_blank">gravatar.com</a></p>
-            <p><a href="destroy_session.php">Log out</a></p>
+          <p class="name">Name :</p>
+          <p class="mail">Email :</p>
+          <p class="signature2">Signature :</p>
+          <p class="username"><?= $user['username'] ?></p>
+          <p class="userEmail"><?= $user['userEmail'] ?></p>
+          <div class="signatureTxt">
+            <?= Michelf\MarkdownExtra::defaultTransform($user["userSignature"]); ?>
           </div>
+          <?php 
+            if($user['userPicture'] == 0){ ?>
+              <div class="picGravatar"><?php include 'include/user_gravatar.php' ;?></div>
+          <?php } else { ?>
+            <div><img class="avatar" src="uploads/images/<?= $user['userId'];?>.png" alt=""></div>
+          <?php } ?>
         </div>
+
+            
+

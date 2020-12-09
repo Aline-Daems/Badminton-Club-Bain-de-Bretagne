@@ -14,4 +14,5 @@
   <?php
     include 'password.php';
     include 'bdd.php';
+    require('parser/Michelf/MarkdownExtra.inc.php');
   ?>

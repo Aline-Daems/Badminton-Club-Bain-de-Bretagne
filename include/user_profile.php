@@ -5,7 +5,9 @@
       $userResult->execute([$_GET['id']]);
       $user=$userResult->fetch(PDO::FETCH_ASSOC);
 
-      if($user){
+      if(!empty($_SESSION['userId']) AND $userId == $_SESSION['userId']){
+        include("include/user.php");
+      }elseif($user){
 ?>
         <div class="user-container">
           <div class="name">Name :</div>
@@ -19,17 +21,10 @@
           <div class="modifEmail"></div>
           <div class="modfiSignature"></div>          
         </div>
+        
 <?php
-      }
-      else{
-        include ("include/no_user.php");
-      }
-      if (!empty($_SESSION['userId']) AND $userId == $_SESSION['userId']){
-?>
-        <div class="user-container">
-          <div class="name">To modify your profile:  <a href="modify_user.php">Click here</a>.</div>
-          <div class="picGravatar"><?php include 'include/gravatar.php' ;?></div>
-        </div>
-<?php
+
+      }else{
+        include("include/no_user.php");
       }
 ?>

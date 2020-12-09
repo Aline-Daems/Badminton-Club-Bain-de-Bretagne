@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
 <?php include("include/head.php"); ?>
+<link rel="stylesheet" href="sass/posts.css">
 </head>
 <body>
 
@@ -19,7 +20,6 @@
 
       <!-- CATEGORIES -->
       <?php include("include/topicCreator.php"); ?>
-
       <!-- aside -->
       <?php include("include/aside.php"); ?>
     </div>
@@ -30,11 +30,10 @@
 
   <!-- FOOTER  -->
   <?php include("include/footer.php"); ?>
-
-
   <script>
     var simplemde = new SimpleMDE({ element: document.getElementById("topicMessage") });
-</script>
+  </script>
 
 </body>
 </html>
+

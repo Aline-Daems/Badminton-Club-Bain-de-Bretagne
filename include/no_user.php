@@ -1,4 +1,13 @@
-    <div class="user-container">
-        <div class="name">No profil to see here. <a href="index.php">Let's go to the boards</a>.</div>
-        <div class="picGravatar"><?php include 'include/no_gravatar.php' ;?></div>
-    </div>
+
+        <div class="noPost">
+            <h3 class="Become">No profile to see here</h3>
+        
+            <button type="submit" name="myProfil" class="w-100 btn btn-success">
+            <?php echo "<a href='index.php'> <strong>Let's go to the boards</strong> </a>" ?>
+            </button>
+
+            <button type="submit" name="myProfil" class="w-100 btn btn-success">
+            <a href="<?php echo $_SERVER["HTTP_REFERER"]; ?>"><strong>Previous page</strong></a>
+            </button>
+        </div>
+    

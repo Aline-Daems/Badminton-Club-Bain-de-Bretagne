@@ -1,8 +1,8 @@
 # Badminton-Club-Bain-de-Bretagne
 BCBB - Small project about a BeCode Bulletin Board
 
-# The project ;
-![Logo](favicon.ico)
+# The project :
+![Logo](pictures/favicon/favicon.ico)
 
 This forum is a small PHP project in order for our group to learn PHP, SQL and the free heroku web hosting service.
 
@@ -27,17 +27,19 @@ https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the
 
 ## Team
 
-**Bertrand** https://github.com/Bertrand2
-**Olivier**  https://github.com/OlivierCharlier
-**Aline**    https://github.com/Aline-Daems
-**Magali**   https://github.com/MagaliGarot
-**Emilie**   https://github.com/EmiliePieront
+* **Bertrand** https://github.com/Bertrand2
+* **Olivier**  https://github.com/OlivierCharlier
+* **Aline**    https://github.com/Aline-Daems
+* **Magali**   https://github.com/MagaliGarot
+* **Emilie**   https://github.com/EmiliePieront
 
 ## Languages 
 * HTML
 * CSS
 * PHP
 * MySQL
+* JavaScript
+* Bootstrap
 
 ## Project structure
 To come up.

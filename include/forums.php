@@ -1,32 +1,52 @@
 <div class="forums container-fluid col-12 col-md-9 p-5">
 	<?php $forumId = $_GET["id"]; ?>
 
-	<div class="rules"> <p class="Text-Rules">Forum Rules </p></div> 
+	<?php 
+		$forumQuery = "SELECT forumName FROM forums WHERE forumId = ?";
+		$forumResult = $bdd->prepare($forumQuery);
+		$forumResult->execute([$forumId]);
+		$forum = $forumResult->fetch(PDO::FETCH_ASSOC);
+if($forum){
+	?>
+
+	<div class="Topic-title"> <p><?= $forum["forumName"]; ?></p></div>
+
+	<!-- BOUTON FORUM RULES -->
+    <?php include "include/forum_rules.php"; ?>
 	<div class="buttons">
 	<div class ="row p-2">
 		<a href="newTopic.php?id=<?= $forumId; ?>" class="btn-success rounded-pill p-2 m-2 reply">
 			New topic
 		</a>
-		<button class="setting"><i class="fas fa-wrench"></i> </button>
-    <form>
-        <div>
-            
-            <input type="text" id="search" name="search" value="Search this topic ..." class="search">
-        </div>
-    </form>
-    <button class="setting"> <i class="fas fa-search"></i></button>
-    <button class="setting"> <i class="fas fa-cog"></i></button>  
+		<button class="setting">
+			<img class="settingIcon" src="pictures/icons/sort-desc.svg" alt="">
+		</button>
+		<form>
+			<div>
+				<input type="text" id="search" name="search" placeholder="Search this forum…" class="search">
+			</div>
+		</form>
+		<button class="setting"><img class="settingIcon" src="pictures/icons/search.svg" alt=""></button>
+		<button class="setting"><img class="settingIcon" src="pictures/icons/settings.svg" alt=""></button>  
 </div>  <!--END OF BUTTONS-->
 
 	</div>
 	<div class="rounded border container">
 		<div class="forums__header row bg-success align-items-center">
 			<p class="col-9 m-0">Topics</p>
-			<img class="col-1 img-fluid m-0" src="pictures/icons/message-circle.svg" alt="msg">
-			<img class="col-2 img-fluid m-0" src="pictures/icons/clock.svg" alt="last updated">
+			<div class="col-1 d-flex justify-content-center">
+				<img class="m-0 settingIcon" src="pictures/icons/message-circle.svg" alt="msg">
+			</div>
+			<div class="col-2 d-flex justify-content-center">
+				<img class="m-0 settingIcon" src="pictures/icons/clock.svg" alt="last updated">
+			</div>
 		</div>
         <?php
-			$topicsQuery = "SELECT * FROM topics WHERE topicForumId = ?";
+			if($forumId == 13){
+				$topicsQuery = "SELECT * FROM topics WHERE topicForumId = ? ORDER BY topicId DESC LIMIT 5";
+			} else {
+				$topicsQuery = "SELECT * FROM topics WHERE topicForumId = ? ORDER BY topicId DESC";
+			}
 			$topicsResult = $bdd->prepare($topicsQuery);
 			$topicsResult->execute(array($forumId));
             while ($topicRow = $topicsResult->fetch(PDO::FETCH_ASSOC)) {
@@ -94,5 +114,10 @@
 		</a>
 		<button class="m-2 setting">Tri</button>
 	</div>
-
+	<?php
+}else{
+    include("include/no_post.php");
+}
+?>
 </div>
+

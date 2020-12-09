@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php include("include/head.php"); 
-$_SESSION['id'] = 173;?>
+<?php include("include/head.php");?>
 <link rel="stylesheet" href="sass/style_user.css">
+<link rel="stylesheet" href="sass/posts.css">
 </head>
 <body>
 
@@ -27,8 +27,10 @@ $_SESSION['id'] = 173;?>
                     include("include/user_profile.php");
                 }elseif (! empty($_SESSION['userId'])){
                     include("include/user.php");
-                }else{ include("include/no_user.php");
-                    }
+                    include("include/profile_editor.php");
+                }else{ 
+                  include("include/no_user.php");
+                }
           ?>
       </div>
 
@@ -42,6 +44,8 @@ $_SESSION['id'] = 173;?>
 
   <!-- FOOTER  -->
   <?php include("include/footer.php"); ?>
-
+  <script>
+    const simplemde = new SimpleMDE({ element: document.getElementById("userSignature") });
+</script>
 </body>
 </html>
