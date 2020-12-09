@@ -157,7 +157,7 @@ if($topic){
             <p class="col-12 m-0 p-2" <?= $postRow["postId"]; ?>><?= Michelf\MarkdownExtra::defaultTransform($postRow['postContent']); ?></p>
         
             <div class="text-center divider">
-                <p class="signature mt-4"><?=  Michelf\MarkdownExtra::defaultTransform($author["userSignature"]); ?> </p>
+                <p class="signature mt-4"><?= Michelf\MarkdownExtra::defaultTransform($author["userSignature"]); ?> </p>
             </div>
             
             </div> <!-- END OF CONTENT BOX-->
