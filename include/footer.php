@@ -10,16 +10,11 @@
     <a href="#"><img class="mediaIcon" src="pictures/icons/rss.svg" alt="rss"></a>
   </div>
   </div>
-  
-
 
 <!-- END OF BACKGROUND GRADIENT  -->
 
 <!-- START OF THE FIRST GREY BACKRGOUND  -->
-
 <div class="grey">
-
-
 <!-- END OF THE FIRST GREY BACKGROUND -->
 <div class="footer-links d-flex justify-content-center">
     <!-- CONTACT -->
@@ -51,7 +46,6 @@
 </div>
     <!-- UTC  -->
     <!-- START OF THE SECOND GREY BACKGROUND  -->
-
   <div class="grey2">
     <p> Powered by Genesis </p>
   </div>
@@ -59,5 +53,12 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+  <script>
+    // button up
+    document.addEventListener('DOMContentLoaded', function() {
+       window.onscroll = function(ev) {
+       document.getElementById("cRetour").className = (window.pageYOffset > 100) ? "cVisible" : "cInvisible";
+       };
+    });
+  </script>
 </footer>
-
