@@ -18,7 +18,7 @@
                   <?php } else { ?>
                     <li><div><img class="avatar" src="uploads/images/<?= $user['userId'];?>.png" alt=""></div></li>
                   <?php } ?>
-                  <li><input value="gravatar" type="radio" class="m-2 control-input" id="buttonPicture1" name="buttonPicture"> </input>Gravatar   <label class="control-label" for="buttonPicture1"><span class="fas fa-info-circle tooltip-profile" data-placement="top" data-toggle="tooltip" data-html="true" title="gravatar" data-content="If you want to use Gravatar for your profile picture, please connect your profile with the same email address used on <a href='https://www.gravatar.com' target='_blank'>gravatar.com</a>"> </span></label></li>
+                  <li><input value="gravatar" type="radio" class="m-2 control-input" id="buttonPicture1" name="buttonPicture"> </input>Gravatar   <label class="control-label" for="buttonPicture1"><img src="pictures/info.png" style="width:18px" class="tooltip-profile" data-placement="top" data-toggle="tooltip" data-html="true" title="gravatar" data-content="If you want to use Gravatar for your profile picture, please connect your profile with the same email address used on <a href='https://www.gravatar.com' target='_blank'>gravatar.com</a>"/></label></li>
                   <li><input value="uploaded" type="radio" class="m-2 control-input" id="buttonPicture2" name="buttonPicture"></input><label class="control-label" for="buttonPicture2">Uploaded Picture</label></li>
                   <li><button name="buttonPictureSubmit" id="buttonPictureSubmit" class="btn-success justify-content-center rounded mt-3 d-flex align-self-center p-1 w-50">Submit</button></li>
                 </ul>
