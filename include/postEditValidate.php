@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	include("bdd.php");
-	$newEditPost = htmlentities($_POST["editPost"], ENT_QUOTES | ENT_IGNORE, "UTF-8");
+	$newEditPost = htmlspecialchars($_POST["editPost"]);
 	//ENT_QUOTES
 	//Variable déclarée plus haut ---> $postRow["postDate"]; $lastPostId = $postRow['postId']; $lastPostMs = $postRow['postContent'];
 	//postEditCreation bouton du textaera sur editPost
