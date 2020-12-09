@@ -23,7 +23,7 @@
             $usernameResult->execute([$_SESSION['userId']]);
             $username = $usernameResult->fetch(PDO::FETCH_ASSOC);
         ?>
-        <p class="login"><strong>
+        <p class="login"  id="haut"><strong>
             Welcome <?= $username["username"]; ?>
             <a href="profile.php" class="login ml-1">
                 <img class="settingIcon-white" src="pictures/icons/account-circle-line.svg" alt="">
@@ -38,4 +38,5 @@
         }
         ?>
     </div>
+    <div><a id="cRetour" class="cInvisible" href="#haut"></a></div>
 </div>

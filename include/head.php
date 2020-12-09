@@ -6,6 +6,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="sass/style.css">
   <link rel="stylesheet" href="sass/aside.css">
+  <link rel="stylesheet" href="sass/up_style.css">
   <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">  
   <link rel="stylesheet" href="fontawesome/all.min.css"> <!--font awesome -->

@@ -38,6 +38,7 @@
     <?php include("include/footer.php"); ?>
     <script>
         var simplemde = new SimpleMDE({ element: document.getElementById("postMessage") });
+        var simplemdeTwo = new SimpleMDE({ element: document.getElementById("editPost") });
     </script>
 </body>
 </html>
