@@ -1,6 +1,7 @@
 <?php 
 if (isset($_POST['upload'])) {
     $name= $_FILES['file']['name'];
+    $size = $_FILES['file']['size'];
 
     $tmp_name= $_FILES['file']['tmp_name'];
 
@@ -16,6 +17,8 @@ if (isset($_POST['upload'])) {
     } else if (!empty($name)){
         if (($fileextension !== "jpg") && ($fileextension !== "jpeg") && ($fileextension !== "png") && ($fileextension !== "bmp")){
             echo "The file extension must be .jpg, .jpeg, .png, or .bmp in order to be uploaded";
+        }else if ($size > 250000){
+            echo "Your picture is to loud, please select a picture with max 2Mb";
         } else {
             $newNamePicture = $user['userId'].'.png';
             move_uploaded_file($tmp_name, $path.$newNamePicture);

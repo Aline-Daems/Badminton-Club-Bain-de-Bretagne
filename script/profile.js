@@ -20,3 +20,9 @@ const input = document.getElementById("username");
     );
   });
 
+// Pour faire fonctionner les tooltips
+  $(function () {
+    $('.tooltip-profile').popover({
+      container: 'body'
+    })
+  })

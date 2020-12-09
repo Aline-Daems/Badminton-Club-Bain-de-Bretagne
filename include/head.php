@@ -7,7 +7,10 @@
   <link rel="stylesheet" href="sass/style.css">
   <link rel="stylesheet" href="sass/aside.css">
   <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">  
+  <link rel="stylesheet" href="fontawesome/all.min.css"> <!--font awesome -->
+  <script defer src="fontawesome/all.min.js"></script> <!--font awesome -->
+
 
   <title>Badminton Club Bain de Bretagne - BCBB</title>
 
