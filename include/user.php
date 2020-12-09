@@ -3,23 +3,6 @@
   $userResult=$bdd->prepare($userQuery);
   $userResult->execute([$_SESSION['userId']]);
   $user=$userResult->fetch(PDO::FETCH_ASSOC);
-
-  if(isset($_POST['buttonPictureSubmit'])){  // Modify Profile Picture button
-    $selectedChoice = $_POST['buttonPicture'];
-    if($selectedChoice == 'uploaded'){
-      $newPictureQuery = "UPDATE users SET userPicture = 1 WHERE userId = ?";
-      $newPictureResult = $bdd->prepare($newPictureQuery);
-      $newPictureResult->execute([$_SESSION['userId']]);
-      header("Location: profile.php");
-      exit(0);
-    } else if($selectedChoice == 'gravatar'){  // gravatar
-      $newPictureQuery = "UPDATE users SET userPicture = 0 WHERE userId = ?";
-      $newPictureResult = $bdd->prepare($newPictureQuery);
-      $newPictureResult->execute([$_SESSION['userId']]);
-      header("Location: profile.php");
-      exit(0);
-    }
-  }
 ?>
 
         
@@ -29,7 +12,8 @@
               <form method="post">
                 <ul style="list-style-type:none">
                   <?php 
-                    if($user['userPicture'] == 0){ ?>
+                  include 'profilePictureRadioButton.php';
+                  if($user['userPicture'] == 0){ ?>
                     <li><div class="picGravatar"><?php include 'include/user_gravatar.php' ;?></div></li>
                   <?php } else { ?>
                     <li><div><img class="avatar" src="uploads/images/<?= $user['userId'];?>.png" alt=""></div></li>
