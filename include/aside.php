@@ -98,16 +98,25 @@ if (isset($_POST['validateone'])){
     <?php
     $userId = $bdd->prepare('SELECT * FROM users ORDER BY userId DESC LIMIT 3');
     $userId->execute();
-    while ($userpost = $userId->fetch(PDO::FETCH_ASSOC)){
-      $email = $userpost["userEmail"]; 
-      $default = "https://cdn1.iconfinder.com/data/icons/sport-avatar-7/64/05-sports-badminton-sport-avatar-player-512.png";
-      $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default );
-    ?>
+    while ($userpost = $userId->fetch(PDO::FETCH_ASSOC)){ ?>
     <div class="container">
       <div class="row p-2">
         <div class="col-3 justify-content-center">
-          <!-- img with the URL created -->
-          <img class="newmemberPic" src="<?php echo $grav_url; ?>" alt="picture" />
+          <?php 
+          if($userpost['userPicture'] == 0){ 
+            //call gravatar with the email from the poster-user
+        $email = $userpost["userEmail"]; 
+        $default = "https://cdn1.iconfinder.com/data/icons/sport-avatar-7/64/05-sports-badminton-sport-avatar-player-512.png";
+        $size = 50;
+        $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
+        ?>
+        <!-- img with the URL created -->
+        <img class="newmemberPic rounded-lg" src="<?php echo $grav_url; ?>" alt="picture" />
+        <?php } else { 
+            $img=base64_encode($userpost['userImage']);?>
+            <div class="newmemberPic"><img class="newmemberPic" alt="" class="img-responsive" src="data:image/jpg;charset=utf8mb4_bin;base64,<?php echo $img ?>"/></div>
+        <?php }
+      ?>
         </div>
         <div class="col-9 d-flex align-items-center">
           <a  class="profile h4 poststitle" href="profile.php?id=<?= $userpost["userId"]; ?>"><?= $userpost['username']; ?></a>  

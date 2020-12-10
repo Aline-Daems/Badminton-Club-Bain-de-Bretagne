@@ -108,7 +108,7 @@ if($topic){
                 while ($postRow = $postResult->fetch(PDO::FETCH_ASSOC)) {
                     $lastPostUserId = $postRow['postUserId'];
                     $lastPostId = $postRow['postId'];
-                
+                    $lastPostMs = $postRow['postContent'];
                     $authorQuery = "SELECT * FROM users WHERE userId = ?";
                     $authorResult = $bdd->prepare($authorQuery);
                     $authorResult->execute(array($postRow["postUserId"]));
