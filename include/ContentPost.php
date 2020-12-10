@@ -1,5 +1,5 @@
 
-<div class="container-fluid col-12 col-md-9">
+<div class="container-fluid col-12 col-md-9 accordion" id="topicContent">
 
 
     <?php 
