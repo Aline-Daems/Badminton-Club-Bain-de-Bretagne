@@ -196,7 +196,7 @@ if($topic){
                 AND $topic["topicAuthorId"]==$_SESSION["userId"]
                 AND !$topic["isLocked"]){
         ?>
-            <form method="post" class="ml-3">
+            <form method="post" action="include/lockTopic.php" class="ml-3">
                 <button class="btn btn-primary reply" type="submit" name="lockTopic">
                     Lock Topic
                 </button>
@@ -206,7 +206,7 @@ if($topic){
                 AND $topic["topicAuthorId"]==$_SESSION["userId"]
                 AND $topic["isLocked"]){
         ?>
-            <form method="post" class="ml-3">
+            <form method="post" action="include/lockTopic.php" class="ml-3">
                 <button class="btn btn-primary reply" type="submit" name="lockTopic">
                     Unlock Topic
                 </button>
