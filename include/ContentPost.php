@@ -129,7 +129,8 @@ if($topic){
                 <div class="avatar-profile">
                     <div class="avatar mb-3">
                         <?php
-                        //call gravatar with the email from the poster-user
+                        if($author['userPicture'] == 0){ 
+                            //call gravatar with the email from the poster-user
                         $email = $author["userEmail"]; 
                         $default = "https://cdn1.iconfinder.com/data/icons/sport-avatar-7/64/05-sports-badminton-sport-avatar-player-512.png";
                         $size = 120;
@@ -137,6 +138,12 @@ if($topic){
                         ?>
                         <!-- img with the URL created -->
                         <img class="avatar rounded-lg" src="<?php echo $grav_url; ?>" alt="picture" />
+                        <?php } else { 
+                            $img=base64_encode($author['userImage']);?>
+                            <div class="avatar"><img  alt="" style="width:100px" class="img-responsive" src="data:image/jpg;charset=utf8mb4_bin;base64,<?php echo $img ?>"/></div>
+                        <?php } ?>
+                        
+                        
                     </div>
                 </div>   <!--END OF AVATAR PROFILE-->
 
