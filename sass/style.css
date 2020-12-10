@@ -229,7 +229,7 @@ text-decoration: none;
 
 .signature {
   width: 100%;
-  height: 10vh;
+  height: fit-content;
   padding: 10px;
   position: relative;
 }
