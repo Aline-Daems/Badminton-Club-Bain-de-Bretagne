@@ -119,52 +119,50 @@ if($topic){
                     $authorResult->execute(array($postRow["postUserId"]));
                     while($author = $authorResult->fetch(PDO::FETCH_ASSOC)){
     ?>
-    <div class="rounded  border container comments">
-		<div class="rounded-top row bg-success align-items-center">
-			<p class="col-8 m-0 date">  
-            <?= $postRow["postDate"]; $lastPostId = $postRow['postId']; $lastPostMs = $postRow['postContent']; ?>
-              <!-- Variables pour récupérer les valeurs des posts-->
-            </p>
-        </div> <!--END OF GREEN BOX WITH DATE-->
-        
-		<div class="row rounded box-comments">
-            <div class="avatar-border rounded">
+    <div class="rounded  border container comments p-0">
 
+        <!-- MESSAGE BOX HEADER -->
+		<div class="rounded-top row bg-success align-items-center justify-content-between pl-1 pr-1 m-0 position-relative">
+            <p class="m-0 date"> <?= $postRow["postDate"]; ?></p>
+            <!--tempWindowTester($postRow['postId']);-->
+            <?= fullEmojiSelector($postRow['postId']); ?>
+        </div>
+        
+        <!-- MESSAGE BOX CONTENT -->
+		<div class="row rounded box-comments m-0">
+            <div class="avatar-border rounded">
                 <div class="avatar-profile">
                     <div class="avatar mb-3">
-                        <?php 
-                        if ($author['userPicture'] == 0) {
-                            //call gravatar with the email from the poster-user
-                            $email = $author["userEmail"]; 
-                            $default = "https://cdn1.iconfinder.com/data/icons/sport-avatar-7/64/05-sports-badminton-sport-avatar-player-512.png";
-                            $size = 120;
-                            $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
-                            ?>
-                            <!-- img with the URL created -->
-                            <img class="avatar rounded-lg" src="<?php echo $grav_url; ?>" alt="picture" />  
-                        <?php   
-                        } else { ?>
-                            <div><img class="avatar" src="uploads/images/<?= $author['userId'];?>.png" alt=""></div>
-                        <?php } ?>
-                    
+                        <?php
+                        //call gravatar with the email from the poster-user
+                        $email = $author["userEmail"]; 
+                        $default = "https://cdn1.iconfinder.com/data/icons/sport-avatar-7/64/05-sports-badminton-sport-avatar-player-512.png";
+                        $size = 120;
+                        $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
+                        ?>
+                        <!-- img with the URL created -->
+                        <img class="avatar rounded-lg" src="<?php echo $grav_url; ?>" alt="picture" />
                     </div>
                 </div>   <!--END OF AVATAR PROFILE-->
 
-            <!--- PSEUDO ET TODO : RANK" ---> 
-            <div class="d-flex align-items-center col-12 justify-content-center">
-                <a  class="profile m-0" href="profile.php?id=<?= $author["userId"]; ?>"><?= $author["username"]; ?></a>
-            </div>
-            
-            
-
+                <!--- PSEUDO ET TODO : RANK" ---> 
+                <div class="d-flex align-items-center col-12 justify-content-center">
+                    <a  class="profile m-0" href="profile.php?id=<?= $author["userId"]; ?>"><?= $author["username"]; ?></a>
+                </div>
             </div>   <!-- END OF AVATAR BOX -->
-            <div class="content p-2" style="position:relative;">
-            <p class="col-12 m-0 p-2" <?= $postRow["postId"]; ?>><?= Michelf\MarkdownExtra::defaultTransform($postRow['postContent']); ?></p>
+
+            <div class="content p-2">
+                <div class="col-12 m-0 p-2" <?= $postRow["postId"]; ?>>
+                    <?= Michelf\MarkdownExtra::defaultTransform($postRow['postContent']); ?>
+                </div>
+
+                <div id="reaction-holder-<?= $postRow['postId']; ?>" class="reactions row">
+                    <?php displayEmojis($postRow['postId'], $bdd); ?> 
+                </div>
         
-            <div class="text-center divider">
-                <p class="signature mt-4"><?= Michelf\MarkdownExtra::defaultTransform($author["userSignature"]); ?> </p>
-            </div>
-            
+                <div class="text-center divider">
+                    <div class="signature mt-4"><?=  Michelf\MarkdownExtra::defaultTransform($author["userSignature"]); ?> </div>
+                </div>
             </div> <!-- END OF CONTENT BOX-->
         </div> <!-- END OF BOX COMMENTS -->
     </div>   <!--END OF CONTAINER COMMENTS--> 
