@@ -5,6 +5,11 @@ if (isset($_POST['upload'])) {
 
     $tmp_name= $_FILES['file']['tmp_name'];
 
+    $position= strpos($name, ".");
+
+    $fileextension= substr($name, $position + 1);
+
+    $fileextension= strtolower($fileextension);
 
     if (empty($name)){
         echo "Please choose a file";
