@@ -2,7 +2,11 @@
 <div class="container-fluid col-12 col-md-9">
 
 
-    <?php $topicId = $_GET["id"]; ?>
+    <?php 
+        $topicId = $_GET["id"]; 
+        include("include/emojiSelector.php");
+        include("include/emojiDisplayer.php");
+    ?>
 
     <?php 
         $topicQuery = "SELECT topicTitle, topicAuthorId, isLocked FROM topics WHERE topicId = ?";
