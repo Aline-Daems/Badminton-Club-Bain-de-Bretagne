@@ -25,7 +25,7 @@ while ($affichage < 4){
                 <div class="card-header headergreen">
                 <strong>
                 <!----- TEST ----->
-                <a class="poststitle" href="posts.php?id=<?= $topicTitle["topicId"]; ?>">
+                <a class="poststitle" href="posts.php?id=<?= $post["postTopicId"]; ?>">
 					      <?= $topicTitle["topicTitle"]; ?>
 			        	</a>
                 </strong>
