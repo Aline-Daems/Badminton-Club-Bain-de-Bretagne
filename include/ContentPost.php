@@ -141,8 +141,8 @@ if($topic){
                 </div>   <!--END OF AVATAR PROFILE-->
 
                 <!--- PSEUDO ET TODO : RANK" ---> 
-                <div class="d-flex align-items-center col-12 justify-content-center">
-                    <a  class="profile m-0" href="profile.php?id=<?= $author["userId"]; ?>"><?= $author["username"]; ?></a>
+                <div class="d-flex align-items-center justify-content-center w-100">
+                    <a  class="profile text-center m-0" href="profile.php?id=<?= $author["userId"]; ?>"><?= $author["username"]; ?></a>
                 </div>
             </div>   <!-- END OF AVATAR BOX -->
 
