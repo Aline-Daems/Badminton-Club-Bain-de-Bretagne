@@ -4,8 +4,7 @@
 		$newSignatureResult = $bdd->prepare($newSignatureQuery);
 		$newSignatureResult->execute([$_POST['userSignature'], $_SESSION['userId']]);
 		$_SESSION["successMessageSignature"] = "Informations updated";
-		header("Location: profile.php");
-		exit(0);
+		
 	}
 
 	if(isset($_POST['validatetwo'])){ // Modify Password
@@ -19,8 +18,7 @@
 			$newPwdResult = $bdd->prepare($newPwdQuery);
 			$_SESSION["succesMessagePassword"] = "Informations updated";
 			$newPwdResult->execute([$pwd, $_SESSION['userId']]);
-			header("Location: profile.php");
-			exit(0);
+			
 		}
 	} 
 
@@ -36,8 +34,7 @@
 			$_SESSION["sucessMessageUsername"] = "Informations updated";
 			$newUsernameResult = $bdd->prepare($newUsernameQuery);
 			$newUsernameResult->execute([$_POST['username'], $_SESSION['userId']]);
-			header("Location: profile.php");
-			exit(0);
+			
 		}
 	}
 	?>

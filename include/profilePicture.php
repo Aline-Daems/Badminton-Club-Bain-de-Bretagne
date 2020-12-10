@@ -29,6 +29,8 @@ if (isset($_POST['upload'])) {
             $newPictureQuery = "UPDATE users SET userPicture = 1 WHERE userId = ?";
             $newPictureResult = $bdd->prepare($newPictureQuery);
             $newPictureResult->execute([$_SESSION['userId']]);
+
+        
             
         }
     }
