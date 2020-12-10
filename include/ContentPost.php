@@ -67,22 +67,13 @@ if($topic){
         <!-- LOCK TOPIC BUTTON -->
         <?php
             /*BUTTON SCRIPT*/
-            if(isset($_POST["lockTopic"])){
-                $lockQuery = "UPDATE topics SET isLocked = ? WHERE topicId = ?";
-                $lockResult = $bdd->prepare($lockQuery);
-                if($topic["isLocked"]){
-                    $lockResult->execute([0,$topicId]);
-                }else{
-                    $lockResult->execute([1,$topicId]);
-                }
-                header("Location: posts.php?id=$topicId");
-            }
-
+            $_SESSION["topicId"] = $topicId;
+            $_SESSION["isLocked"] = $topic["isLocked"];
             if(isset($_SESSION["userId"]) 
                 AND $topic["topicAuthorId"]==$_SESSION["userId"]
                 AND !$topic["isLocked"]){
         ?>
-            <form method="post" class="ml-3">
+            <form method="post" action="include/lockTopic.php" class="ml-3">
                 <button class="btn btn-primary reply" type="submit" name="lockTopic">
                     Lock Topic
                 </button>
@@ -92,7 +83,7 @@ if($topic){
                 AND $topic["topicAuthorId"]==$_SESSION["userId"]
                 AND $topic["isLocked"]){
         ?>
-            <form method="post" class="ml-3">
+            <form method="post" action="include/lockTopic.php" class="ml-3">
                 <button class="btn btn-primary reply" type="submit" name="lockTopic">
                     Unlock Topic
                 </button>
