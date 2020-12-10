@@ -4,6 +4,7 @@
 <head>
     <?php include("include/head.php"); ?>
     <link rel="stylesheet" href="sass/posts.css">
+    <link rel="stylesheet" href="sass/emojis.css">
 </head>
 <body>
 
