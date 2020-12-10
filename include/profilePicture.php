@@ -11,24 +11,27 @@ if (isset($_POST['upload'])) {
 
     $fileextension= strtolower($fileextension);
 
-    $path= 'uploads/images/';
     if (empty($name)){
         echo "Please choose a file";
     } else if (!empty($name)){
-        if (($fileextension !== "jpg") && ($fileextension !== "jpeg") && ($fileextension !== "png") && ($fileextension !== "bmp")){
-            echo "The file extension must be .jpg, .jpeg, .png, or .bmp in order to be uploaded";
+        if (($fileextension !== "jpg") && ($fileextension !== "jpeg") && ($fileextension !== "gif") && ($fileextension !== "png") && ($fileextension !== "bmp")){
+            echo "The file extension must be .jpg, .jpeg, .png, .gif or .bmp in order to be uploaded";
         }else if ($size > 2000000){
             echo "Your picture is to loud, please select a picture with max 2Mb";
         } else {
-            $newNamePicture = $user['userId'].'.png';
-            move_uploaded_file($tmp_name, $path.$newNamePicture);
+            
+            $imageQuery = "UPDATE users SET userImage = ? WHERE userId = ?";
+            $imageResult = $bdd->prepare($imageQuery);
+            $imageResult->execute([file_get_contents($tmp_name) , $_SESSION['userId']]);
+
             echo 'Uploaded ';
+    
             $newPictureQuery = "UPDATE users SET userPicture = 1 WHERE userId = ?";
             $newPictureResult = $bdd->prepare($newPictureQuery);
             $newPictureResult->execute([$_SESSION['userId']]);
             
         }
     }
-}
+} 
 ?>
 
