@@ -90,34 +90,7 @@ if (isset($_POST['validateone'])){
             
 
       <!-----------LAST POSTS -------------->
-          <h3 class="titlelastPost">Last Post</h3> 
-          <?php
-          $lastPost = $bdd->prepare('SELECT postContent, postTopicId FROM posts ORDER BY postId DESC LIMIT 4');
-          $lastPost->execute();
-
-          while ($post = $lastPost->fetch(PDO::FETCH_ASSOC)){
-            $lastTopic = $bdd->prepare('SELECT * FROM topics WHERE topicId = ?');
-            $lastTopic->execute([$post['postTopicId']]);
-            $topicTitle=$lastTopic->fetch(PDO::FETCH_ASSOC);
-          ?>
-              <div class="card bg-light mb-3 lastpost">
-                <div class="card-header headergreen">
-                <strong>
-                <!----- TEST ----->
-                <a class="poststitle" href="posts.php?id=<?= $topicTitle["topicId"]; ?>">
-					      <?= $topicTitle["topicTitle"]; ?>
-			        	</a>
-                </strong>
-                </div>
-                <div class="card-body">
-                  <div class="card-text">
-                      <?= Michelf\MarkdownExtra::defaultTransform($post['postContent']); ?>
-                  </div>
-                </div>
-              </div>
-          <?php
-          }
-        ?>
+         <?php include("aside_lastpost.php"); ?>
 
         <!-----------LAST ACTIVE USERS -------------->
 <h3 class="newmember">New members</h3> 
