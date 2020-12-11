@@ -49,8 +49,8 @@
 				<label for="profileImg" class="h4 p-2 mt-2">Change your profile image</label>
 				<?php include "profilePicture.php"; ?>
 				<div class="custom-file" onchange="doTheMagic(20)">
-					<input name="file" id="file" type="file" class="form-control-file col-6">
-					<label id="labelfile" class="custom-file-label" for="file">Choose file</label>
+					<input style="overflow:hidden; outline:none" name="file" id="file" type="file" class="form-control-file col-6">
+					<label  id="labelfile" class="custom-file-label" for="file">Choose file</label>
 				</div>
 				<button type="submit" name="upload" value="Upload" id="upload" class="btn-success justify-content-center rounded mt-3 d-flex align-self-center p-1 w-50">Submit</button><br>
 				<a href="profile.php"><button type="submit" class="btn-success rounded mt-3 p-1">Display changes</button></a>
@@ -81,9 +81,9 @@
 				<div>
 					<input type="password" class=" password-input" placeholder="Votre Password" maxlength="40"  id="pwd" name="pwd"></input>
 				</div>
-				<label for="password" class="h4 p-2 mt-2">Confirm Password </label><br>
+				<label for="password" class="h4 p-2 mt-2">Confirm Password </label>
 				<div>
-					<input type="password" placeholder="Confirmez votre Password" name="pwd-confirm" id="pwd-confirm" class="password-input" maxlength="40"><br>
+					<input type="password" placeholder="Confirmez votre Password" name="pwd-confirm" id="pwd-confirm" class="password-input" maxlength="40">
 				</div>
 				<button value="submit" name="validatetwo" id="validatetwo" class="btn-success justify-content-center rounded mt-3 d-flex align-self-center p-1 w-50">Submit</button>	
 				<?php if (isset($errorMessageChange3)) { ?> <p style="color: red;"><?= $errorMessageChange3 ; ?></p> <?php } ?>
