@@ -286,7 +286,7 @@ text-decoration: none;
 
   .icon {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-bottom: 15px;
   }
 
