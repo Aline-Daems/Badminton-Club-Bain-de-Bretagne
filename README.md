@@ -42,7 +42,67 @@ https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the
 * Bootstrap
 
 ## Project structure
-To come up.
+├── include
+│   ├── aside_lastpost.php
+│   ├── aside.php
+│   ├── bdd.php
+│   ├── boards.php
+│   ├── breadcrumb.php
+│   ├── ContentPost.php
+│   ├── editPost.php
+│   ├── emojiDisplayer.php
+│   ├── emojiPostUpdate.php
+│   ├── emojiSelector.php
+│   ├── emojiUpdater.php
+│   ├── footer.php
+│   ├── forum_rules.php
+│   ├── forums.php
+│   ├── gravatar.php
+│   ├── head.php
+│   ├── header.php
+│   ├── lockTopic.php
+│   ├── no_access.php
+│   ├── no_gravatar.php
+│   ├── no_post.php
+│   ├── no_session.php
+│   ├── no_user.php
+│   ├── password.php
+│   ├── postCreator.php
+│   ├── postdelete.php
+│   ├── postEditValidate.php
+│   ├── postValidate.php
+│   ├── profile_editor.php
+│   ├── profile_gravatar.php
+│   ├── profilePicture.php
+│   ├── profilePictureRadioButton.php
+│   ├── signup.php
+│   ├── topicCreator.php
+│   ├── user_gravatar.php
+│   ├── user_profile.php
+│   └── user.php
+├── sass
+│   ├── aside.css
+│   ├── emojis.css
+│   ├── forum.css
+│   ├── posts.css
+│   ├── style.css
+│   ├── style.css.map
+│   ├── style.scss
+│   └── up_style.css
+├── script
+│   ├── profile.js
+│   └── reactions.js
+├── error_404.php
+├── destroy_session.php
+├── forum.php
+├── index.php
+├── modifProfile.php
+├── newTopic.php
+├── posts.php
+├── profile.php
+├── register.php
+├── secretissecret.php
+└── README.md
 
 
 
