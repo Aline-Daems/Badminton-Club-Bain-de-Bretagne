@@ -69,21 +69,21 @@ if (isset($_POST['validateone'])){
             <!-----------NEW MEMBER-------------->
             
                 <h3 class="Become">Become a member</h3>
-                <button type="submit" name="becomeaMembre" class="w-100 btn btn-success">
-                <?php echo "<a href='register.php'> <strong>Sign up</strong> ! </a>" ?>
-                </button>
+                <a href='register.php'> <button type="submit" name="becomeaMembre" class="w-100 btn btn-success">
+                <?php echo " <strong>Sign up</strong> !" ?>
+                </button></a>
                 </br>
             <?php 
             }else{
             ?>
                 </br>
                 <h3 class="Become">My profile</h3>
-                <button type="submit" name="myProfil" class="w-100 btn btn-success">
-                <?php echo "<a href='profile.php'> <strong>Complete your profile !</strong> </a>" ?>
-                </button><br /><br />
-                <button type="submit" name="myProfil" class="w-100 btn btn-success">
-                <?php echo "<a href='destroy_session.php'> <strong>Log out</strong> </a>" ?>
-                </button>
+                <a href='profile.php'> <button type="submit" name="myProfil" class="w-100 btn btn-success">
+                <?php echo "<strong>Complete your profile !</strong> " ?>
+                </button></a><br /><br />
+                <a href='destroy_session.php'> <button type="submit" name="myProfil" class="w-100 btn btn-success">
+                <?php echo "<strong>Log out</strong> " ?>
+                </button></a>
             <?php 
             }
             ?>
