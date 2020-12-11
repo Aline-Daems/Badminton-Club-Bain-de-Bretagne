@@ -21,8 +21,8 @@ The forum meets the features a classical forum have :
 * possibility to create new topics
 
 ## Link to exercice
-* Part 1[](https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the-hills/02-bcbb/01-basics)
-* Part 2[](https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the-hills/02-bcbb/02-advanced)
+* [Part 1](https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the-hills/02-bcbb/01-basics)
+* [Part 2](https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the-hills/02-bcbb/02-advanced)
 
 ## Team
 ![Logo](pictures/favicon/favicon.ico)
