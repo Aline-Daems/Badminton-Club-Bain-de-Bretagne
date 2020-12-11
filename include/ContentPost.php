@@ -140,7 +140,7 @@ if($topic){
                         <img class="avatar rounded-lg" src="<?php echo $grav_url; ?>" alt="picture" />
                         <?php } else { 
                             $img=base64_encode($author['userImage']);?>
-                            <div class="avatar"><img  alt="" style="width:100px" class="img-responsive" src="data:image/jpg;charset=utf8mb4_bin;base64,<?php echo $img ?>"/></div>
+                            <div class="avatar"><img  alt="" class="img-responsive" src="data:image/jpg;charset=utf8mb4_bin;base64,<?php echo $img ?>"/></div>
                         <?php } ?>
                         
                         
