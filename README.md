@@ -32,7 +32,7 @@ The forum meets the features a classical forum have :
 * **Magali**   https://github.com/MagaliGarot
 * **Emilie**   https://github.com/EmiliePieront
 
-## Languages 
+## 	U+1F527 Languages 
 * HTML
 * CSS
 * PHP
