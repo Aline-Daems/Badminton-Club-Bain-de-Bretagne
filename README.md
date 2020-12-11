@@ -46,63 +46,63 @@ https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the
 │   ├── aside_lastpost.php</br>
 │   ├── aside.php</br>
 │   ├── bdd.php</br>
-│   ├── boards.php
-│   ├── breadcrumb.php
-│   ├── ContentPost.php
-│   ├── editPost.php
-│   ├── emojiDisplayer.php
-│   ├── emojiPostUpdate.php
-│   ├── emojiSelector.php
-│   ├── emojiUpdater.php
-│   ├── footer.php
-│   ├── forum_rules.php
-│   ├── forums.php
-│   ├── gravatar.php
-│   ├── head.php
-│   ├── header.php
-│   ├── lockTopic.php
-│   ├── no_access.php
-│   ├── no_gravatar.php
-│   ├── no_post.php
-│   ├── no_session.php
-│   ├── no_user.php
-│   ├── password.php
-│   ├── postCreator.php
-│   ├── postdelete.php
-│   ├── postEditValidate.php
-│   ├── postValidate.php
-│   ├── profile_editor.php
-│   ├── profile_gravatar.php
-│   ├── profilePicture.php
-│   ├── profilePictureRadioButton.php
-│   ├── signup.php
-│   ├── topicCreator.php
-│   ├── user_gravatar.php
-│   ├── user_profile.php
-│   └── user.php
-├── sass
-│   ├── aside.css
-│   ├── emojis.css
-│   ├── forum.css
-│   ├── posts.css
-│   ├── style.css
-│   ├── style.css.map
-│   ├── style.scss
-│   └── up_style.css
-├── script
-│   ├── profile.js
-│   └── reactions.js
-├── error_404.php
-├── destroy_session.php
-├── forum.php
-├── index.php
-├── modifProfile.php
-├── newTopic.php
-├── posts.php
-├── profile.php
-├── register.php
-├── secretissecret.php
-└── README.md
+│   ├── boards.php</br>
+│   ├── breadcrumb.php</br>
+│   ├── ContentPost.php</br>
+│   ├── editPost.php</br>
+│   ├── emojiDisplayer.php</br>
+│   ├── emojiPostUpdate.php</br>
+│   ├── emojiSelector.php</br>
+│   ├── emojiUpdater.php</br>
+│   ├── footer.php</br>
+│   ├── forum_rules.php</br>
+│   ├── forums.php</br>
+│   ├── gravatar.php</br>
+│   ├── head.php</br>
+│   ├── header.php</br>
+│   ├── lockTopic.php</br>
+│   ├── no_access.php</br>
+│   ├── no_gravatar.php</br>
+│   ├── no_post.php</br>
+│   ├── no_session.php</br>
+│   ├── no_user.php</br>
+│   ├── password.php</br>
+│   ├── postCreator.php</br>
+│   ├── postdelete.php</br>
+│   ├── postEditValidate.php</br>
+│   ├── postValidate.php</br>
+│   ├── profile_editor.php</br>
+│   ├── profile_gravatar.php</br>
+│   ├── profilePicture.php</br>
+│   ├── profilePictureRadioButton.php</br>
+│   ├── signup.php</br>
+│   ├── topicCreator.php</br>
+│   ├── user_gravatar.php</br>
+│   ├── user_profile.php</br>
+│   └── user.php</br>
+├── sass</br>
+│   ├── aside.css</br>
+│   ├── emojis.css</br>
+│   ├── forum.css</br>
+│   ├── posts.css</br>
+│   ├── style.css</br>
+│   ├── style.css.map</br>
+│   ├── style.scss</br>
+│   └── up_style.css</br>
+├── script</br>
+│   ├── profile.js</br>
+│   └── reactions.js</br>
+├── error_404.php</br>
+├── destroy_session.php</br>
+├── forum.php</br>
+├── index.php</br>
+├── modifProfile.php</br>
+├── newTopic.php</br>
+├── posts.php</br>
+├── profile.php</br>
+├── register.php</br>
+├── secretissecret.php</br>
+└── README.md</br>
 
 
 
