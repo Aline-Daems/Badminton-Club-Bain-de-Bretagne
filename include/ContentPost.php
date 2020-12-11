@@ -236,15 +236,22 @@ if($topic){
             Edit Post
         </button>
         </a>
+
+        <a href="#deletePost">
+        <button class="btn btn-primary reply" type="button" data-toggle="collapse" data-target="#deletePost" aria-expanded="false" aria-controls="#deletePost">
+        <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+        </a> 
     <?php
         } 
     ?>
-
+    <?php include("include/editPost.php"); ?>
+    <?php include("include/editDeletePost.php"); ?>
+    
     <?php include("include/postCreator.php");
 }else{
     include("include/no_post.php");
 }
     ?>
-    <?php include("include/editPost.php"); ?>
 </div>
 
