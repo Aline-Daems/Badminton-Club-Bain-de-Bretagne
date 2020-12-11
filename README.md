@@ -42,10 +42,10 @@ https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the
 * Bootstrap
 
 ## Project structure
-├── include
-│   ├── aside_lastpost.php
-│   ├── aside.php
-│   ├── bdd.php
+├── include </br>
+│   ├── aside_lastpost.php</br>
+│   ├── aside.php</br>
+│   ├── bdd.php</br>
 │   ├── boards.php
 │   ├── breadcrumb.php
 │   ├── ContentPost.php
