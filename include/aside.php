@@ -32,7 +32,7 @@ if (isset($_POST['validateone'])){
 }
 ?>
 
-    <aside class="col-md-3 col-12">
+    <aside class="col-lg-3 col-md-4 col-12">
                     <!-----------SEARCH-------------->
                 <!-- <form action="" method="POST">
                   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

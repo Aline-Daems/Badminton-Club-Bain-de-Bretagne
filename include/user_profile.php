@@ -25,10 +25,7 @@
           <?php } else { 
             $img=base64_encode($user['userImage']);?>
             <div><img class="avatar" alt="" style="width:100px" class="img-responsive" src="data:image/jpg;charset=utf8mb4_bin;base64,<?php echo $img ?>"/></div>
-          <?php } ?>
-          <div class="modifName"></div>
-          <div class="modifEmail"></div>
-          <div class="modfiSignature"></div>          
+          <?php } ?>        
         </div>
         
 <?php

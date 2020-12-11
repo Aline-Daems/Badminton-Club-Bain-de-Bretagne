@@ -44,7 +44,7 @@
 	<p class="h2 text-center mt-3">Change your informations</p>
 	<div class="card-body row"> 
 	<!-- Changer la photo de profil --> 
-		<div class="col d-flex justify-content-center">
+		<div class="col-lg-4 col-md-12 d-flex justify-content-center">
 		<form action="profile.php" method="POST" class="rounded m-3 d-flex flex-column p-1 d-flex align-items-center" enctype="multipart/form-data"> 
 				<label for="profileImg" class="h4 p-2 mt-2">Change your profile image</label>
 				<?php include "profilePicture.php"; ?>
@@ -59,7 +59,7 @@
 		</div>
 
 	<!-- Changer le pseudo  -->
-		<div class="col d-flex justify-content-center">
+		<div class="col-lg-4 col-md-12 d-flex justify-content-center">
 			<form method="post" class="rounded m-3 d-flex flex-column p-1 d-flex align-items-center "> 
 	<?php if (isset($_SESSION["sucessMessageUsername"])){ ?> <p style="color: green;"> <?php echo $_SESSION["sucessMessageUsername"]; ?> </p> <?php unset($_SESSION["sucessMessageUsername"]); } ?>
 				<label for="username" class="h4 p-2 mt-2">Change your username</label>
@@ -74,7 +74,7 @@
 			</form>
 		</div>
 	<!-- Changer le password  -->
-		<div class="col d-flex justify-content-center"> 
+		<div class="col-lg-4 col-md-12 d-flex justify-content-center"> 
 			<form method="post" class="rounded m-3 d-flex flex-column p-1 d-flex align-items-center">
 	<?php if (isset($_SESSION["succesMessagePassword"])){ ?> <p style="color: green;"> <?php  echo $_SESSION["succesMessagePassword"]; ?> </p> <?php unset($_SESSION["succesMessagePassword"]); } ?>
 				<label for="password" class="h4 p-2 mt-2">Change your password</label>

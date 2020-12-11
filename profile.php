@@ -21,7 +21,7 @@
    
 
       <!-- USER PROFIL -->
-      <div class="userContainer col-12 col-md-9" style="box-sizing:border-box;">
+      <div class="container col-lg-9 col-12 col-md-8">
           <?php       
                 if (! empty($_GET['id'])){
                     include("include/user_profile.php");
