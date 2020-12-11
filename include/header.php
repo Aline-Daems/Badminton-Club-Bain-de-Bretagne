@@ -6,7 +6,7 @@
         <?php if (empty($_SESSION['userId']))
         {
         ?>
-        <p class="login"><strong>
+        <p class="login" id="haut"><strong>
             <a href="register.php" class="login">
                 <img class="settingIcon-white" src="pictures/icons/account-circle-line.svg" alt="">
                 Register
