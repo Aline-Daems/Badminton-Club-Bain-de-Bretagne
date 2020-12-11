@@ -26,7 +26,7 @@ https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the
 
 
 ## Team
-
+![Logo](pictures/favicon/favicon.ico)
 * **Bertrand** https://github.com/Bertrand2
 * **Olivier**  https://github.com/OlivierCharlier
 * **Aline**    https://github.com/Aline-Daems
