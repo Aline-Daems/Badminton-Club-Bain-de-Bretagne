@@ -321,7 +321,11 @@ text-decoration: none;
   color:#7bd2a7;
 }
 
-.footer-links a:hover {
+.footer-links {
+  color: #0fb;
+}
+
+a:hover {
   color: #0fb54b;
 
 }

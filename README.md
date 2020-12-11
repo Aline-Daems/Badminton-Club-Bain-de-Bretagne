@@ -21,12 +21,11 @@ The forum meets the features a classical forum have :
 * possibility to create new topics
 
 ## Link to exercice
-https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the-hills/02-bcbb/01-basics
-https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the-hills/02-bcbb/02-advanced
-
+* [Part 1](https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the-hills/02-bcbb/01-basics)
+* [Part 2](https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the-hills/02-bcbb/02-advanced)
 
 ## Team
-
+![Logo](pictures/favicon/favicon.ico)
 * **Bertrand** https://github.com/Bertrand2
 * **Olivier**  https://github.com/OlivierCharlier
 * **Aline**    https://github.com/Aline-Daems
@@ -39,10 +38,24 @@ https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the
 * PHP
 * MySQL
 * JavaScript
+
+## Library
 * Bootstrap
 
 ## Project structure
-├── include </br>
+.</br>
+├── error_404.php</br>
+├── destroy_session.php</br>
+├── forum.php</br>
+├── index.php</br>
+├── modifProfile.php</br>
+├── newTopic.php</br>
+├── posts.php</br>
+├── profile.php</br>
+├── register.php</br>
+├── secretissecret.php</br>
+├── README.md</br>
+├── include/</br>
 │   ├── aside_lastpost.php</br>
 │   ├── aside.php</br>
 │   ├── bdd.php</br>
@@ -80,7 +93,7 @@ https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the
 │   ├── user_gravatar.php</br>
 │   ├── user_profile.php</br>
 │   └── user.php</br>
-├── sass</br>
+├── sass/</br>
 │   ├── aside.css</br>
 │   ├── emojis.css</br>
 │   ├── forum.css</br>
@@ -89,20 +102,10 @@ https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the
 │   ├── style.css.map</br>
 │   ├── style.scss</br>
 │   └── up_style.css</br>
-├── script</br>
+├── script/</br>
 │   ├── profile.js</br>
 │   └── reactions.js</br>
-├── error_404.php</br>
-├── destroy_session.php</br>
-├── forum.php</br>
-├── index.php</br>
-├── modifProfile.php</br>
-├── newTopic.php</br>
-├── posts.php</br>
-├── profile.php</br>
-├── register.php</br>
-├── secretissecret.php</br>
-└── README.md</br>
+
 
 
 
