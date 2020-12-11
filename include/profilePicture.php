@@ -15,7 +15,7 @@ if (isset($_POST['upload'])) {
         echo "Please choose a file";
     } else if (!empty($name)){
         if (($fileextension !== "jpg") && ($fileextension !== "jpeg") && ($fileextension !== "gif") && ($fileextension !== "png") && ($fileextension !== "bmp")){
-            echo "The file extension must be .jpg, .jpeg, .png, .gif or .bmp in order to be uploaded";
+            echo "The file extension must be .jpg, .jpeg, .png, .gif or .bmp in order to be uploaded<br>If you have some '.' into the filename, it will not working";
         }else if ($size > 2000000){
             echo "Your picture is to loud, please select a picture with max 2Mb";
         } else {
