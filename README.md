@@ -37,7 +37,7 @@ The forum meets the features a classical forum have :
 * CSS
 * PHP
 * MySQL
-* JavaScript [![JavaScript](https://img.shields.io/badge/Code-JavaScript-green.svg)](javascript.svg)
+* JavaScript [![JavaScript](https://img.shields.io/badge/Code/javascript.svg-JavaScript-green.svg)]()
 
 ## Library
 * Bootstrap
