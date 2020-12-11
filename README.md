@@ -32,12 +32,12 @@ The forum meets the features a classical forum have :
 * **Magali**   https://github.com/MagaliGarot
 * **Emilie**   https://github.com/EmiliePieront
 
-## 	U+1F527 Languages 
+## 🔧 Languages 
 * HTML
 * CSS
 * PHP
 * MySQL
-* JavaScript
+* JavaScript [![JavaScript](https://img.shields.io/badge/Code-JavaScript-green.svg)](javascript.svg)
 
 ## Library
 * Bootstrap
