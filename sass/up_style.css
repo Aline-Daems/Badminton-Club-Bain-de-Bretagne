@@ -13,6 +13,8 @@ a#cRetour{
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   text-decoration: none;
+  height: 120px;
+  width: 120px;
 }
 a#cRetour:before{ content: "\25b2"; } 
 /* \25b2 is the  Unicode number for triangle */

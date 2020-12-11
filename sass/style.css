@@ -289,6 +289,27 @@ text-decoration: none;
     flex-direction: column;
     margin-bottom: 15px;
   }
+
+  .background {
+    background-size: 95%;
+    height: 80%; 
+    margin-left: 2px;
+    margin-top: -50px;
+    margin-right: 2px;
+  }
+  .container-fluid{
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .userContainer{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .card .m-4{
+    margin: 5px;
+  }
 }
 
 .footer-links {
@@ -335,4 +356,3 @@ a:hover>.settingIcon-footer{
   filter: invert(97%) sepia(9%) saturate(2061%) hue-rotate(73deg) brightness(88%) contrast(86%);
   background-color: #ddd;
 }
-
