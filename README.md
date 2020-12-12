@@ -24,8 +24,7 @@ The forum meets the features a classical forum have :
 * [Part 1](https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the-hills/02-bcbb/01-basics)
 * [Part 2](https://github.com/becodeorg/LIE-Hamilton-4.25/tree/master/01-main-course/02-the-hills/02-bcbb/02-advanced)
 
-## Team
-![Logo](pictures/favicon/favicon.ico)
+## ![Logo](pictures/favicon/favicon.ico) Team
 * **Bertrand** https://github.com/Bertrand2
 * **Olivier**  https://github.com/OlivierCharlier
 * **Aline**    https://github.com/Aline-Daems
@@ -37,8 +36,7 @@ The forum meets the features a classical forum have :
 * CSS
 * PHP
 * MySQL
-* JavaScript [![JavaScript](javascript.svg)(https://img.shields.io/badge/Code-JavaScript-green.svg)]()
-
+* JavaScript 
 
 ## Library
 * Bootstrap
