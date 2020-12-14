@@ -10,6 +10,10 @@ if (isset($_POST['upload'])) {
     $fileextension= substr($name, $position + 1);
 
     $fileextension= strtolower($fileextension);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9c8f3d90b279832e7a9cc8099790ecb80d9649cc
     if (empty($name)){
         echo "Please choose a file";
     } else if (!empty($name)){

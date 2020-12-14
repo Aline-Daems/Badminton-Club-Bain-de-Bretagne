@@ -92,11 +92,11 @@ if($topic){
             }
         ?>
 
-        <form class="row ml-3 mr-3">
+        <form method="post" action="search.php?topicId=<?= $topicId; ?>" class="row ml-3 mr-3">
             <div>
                 <input type="text" id="search" name="search" placeholder="Search this topic ..." class="search">
             </div>
-            <button class="setting"><img class="settingIcon" src="pictures/icons/search.svg" alt="search"></button>
+            <button type="submit" name="searchButton" class="setting"><img class="settingIcon" src="pictures/icons/search.svg" alt="search"></button>
         </form>
         <button class="setting"><img class="settingIcon" src="pictures/icons/settings.svg" alt="settings"></button>
     </div>  <!--END OF BUTTONS-->
