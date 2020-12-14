@@ -10,12 +10,6 @@ if (isset($_POST['upload'])) {
     $fileextension= substr($name, $position + 1);
 
     $fileextension= strtolower($fileextension);
-
-<<<<<<< HEAD
-=======
-    $path= 'uploads/images/';
-    echo $tmp_name;
->>>>>>> 6d4ff61940f25302060531178f4b185108f2673b
     if (empty($name)){
         echo "Please choose a file";
     } else if (!empty($name)){
