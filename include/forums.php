@@ -21,12 +21,12 @@ if($forum){
 		<button class="setting">
 			<img class="settingIcon" src="pictures/icons/sort-desc.svg" alt="">
 		</button>
-		<form>
+		<form method="post" action="search.php?forumId=<?= $forumId; ?>"class="row ml-3 mr-3">
 			<div>
 				<input type="text" id="search" name="search" placeholder="Search this forum…" class="search">
 			</div>
+			<button type="submit" class="setting"><img class="settingIcon" src="pictures/icons/search.svg" alt=""></button>
 		</form>
-		<button class="setting"><img class="settingIcon" src="pictures/icons/search.svg" alt=""></button>
 		<button class="setting"><img class="settingIcon" src="pictures/icons/settings.svg" alt=""></button>  
 </div>  <!--END OF BUTTONS-->
 

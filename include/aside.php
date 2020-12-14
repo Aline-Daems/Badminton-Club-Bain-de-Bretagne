@@ -89,6 +89,14 @@ if (isset($_POST['validateone'])){
             ?>
             
 
+        <form method="post" action="search.php" class="row ml-3 mr-3 mt-5">
+          <div>
+            <input type="text" id="search" name="search" placeholder="Search this website ..." class="search">
+          </div>
+          <button type="submit" name="searchButton" class="setting"><img class="settingIcon" src="pictures/icons/search.svg" alt="search"></button>
+        </form>
+            
+
       <!-----------LAST POSTS -------------->
          <?php include("aside_lastpost.php"); ?>
 
