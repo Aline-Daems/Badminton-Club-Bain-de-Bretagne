@@ -43,8 +43,8 @@ The forum meets the features a classical forum have :
 
 ## Project structure
 .</br>
-├── error_404.php</br>
 ├── destroy_session.php</br>
+├── error_404.php</br>
 ├── forum.php</br>
 ├── index.php</br>
 ├── modifProfile.php</br>
@@ -52,6 +52,7 @@ The forum meets the features a classical forum have :
 ├── posts.php</br>
 ├── profile.php</br>
 ├── register.php</br>
+├── search.php</br>
 ├── secretissecret.php</br>
 ├── README.md</br>
 ├── include/</br>
@@ -61,6 +62,7 @@ The forum meets the features a classical forum have :
 │   ├── boards.php</br>
 │   ├── breadcrumb.php</br>
 │   ├── ContentPost.php</br>
+│   ├── editDeletePost.php</br>
 │   ├── editPost.php</br>
 │   ├── emojiDisplayer.php</br>
 │   ├── emojiPostUpdate.php</br>
@@ -87,6 +89,7 @@ The forum meets the features a classical forum have :
 │   ├── profile_gravatar.php</br>
 │   ├── profilePicture.php</br>
 │   ├── profilePictureRadioButton.php</br>
+│   ├── searchResult.php</br>
 │   ├── signup.php</br>
 │   ├── topicCreator.php</br>
 │   ├── user_gravatar.php</br>
@@ -104,6 +107,11 @@ The forum meets the features a classical forum have :
 ├── script/</br>
 │   ├── profile.js</br>
 │   └── reactions.js</br>
+
+
+
+
+
 
 
 
