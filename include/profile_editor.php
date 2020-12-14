@@ -44,13 +44,13 @@
 	<p class="h2 text-center mt-3">Change your informations</p>
 	<div class="card-body row"> 
 	<!-- Changer la photo de profil --> 
-		<div class="col d-flex justify-content-center">
+		<div class="col-lg-4 col-md-12 d-flex justify-content-center">
 		<form action="profile.php" method="POST" class="rounded m-3 d-flex flex-column p-1 d-flex align-items-center" enctype="multipart/form-data"> 
 				<label for="profileImg" class="h4 p-2 mt-2">Change your profile image</label>
 				<?php include "profilePicture.php"; ?>
 				<div class="custom-file" onchange="doTheMagic(20)">
-					<input name="file" id="file" type="file" class="form-control-file col-6">
-					<label id="labelfile" class="custom-file-label" for="file">Choose file</label>
+					<input style="overflow:hidden; outline:none" name="file" id="file" type="file" class="form-control-file col-6">
+					<label  id="labelfile" class="custom-file-label" for="file">Choose file</label>
 				</div>
 				<button type="submit" name="upload" value="Upload" id="upload" class="btn-success justify-content-center rounded mt-3 d-flex align-self-center p-1 w-50">Submit</button><br>
 				<a href="profile.php"><button type="submit" class="btn-success rounded mt-3 p-1">Display changes</button></a>
@@ -59,7 +59,7 @@
 		</div>
 
 	<!-- Changer le pseudo  -->
-		<div class="col d-flex justify-content-center">
+		<div class="col-lg-4 col-md-12 d-flex justify-content-center">
 			<form method="post" class="rounded m-3 d-flex flex-column p-1 d-flex align-items-center "> 
 	<?php if (isset($_SESSION["sucessMessageUsername"])){ ?> <p style="color: green;"> <?php echo $_SESSION["sucessMessageUsername"]; ?> </p> <?php unset($_SESSION["sucessMessageUsername"]); } ?>
 				<label for="username" class="h4 p-2 mt-2">Change your username</label>
@@ -74,16 +74,16 @@
 			</form>
 		</div>
 	<!-- Changer le password  -->
-		<div class="col d-flex justify-content-center"> 
+		<div class="col-lg-4 col-md-12 d-flex justify-content-center"> 
 			<form method="post" class="rounded m-3 d-flex flex-column p-1 d-flex align-items-center">
 	<?php if (isset($_SESSION["succesMessagePassword"])){ ?> <p style="color: green;"> <?php  echo $_SESSION["succesMessagePassword"]; ?> </p> <?php unset($_SESSION["succesMessagePassword"]); } ?>
 				<label for="password" class="h4 p-2 mt-2">Change your password</label>
 				<div>
 					<input type="password" class=" password-input" placeholder="Votre Password" maxlength="40"  id="pwd" name="pwd"></input>
 				</div>
-				<label for="password" class="h4 p-2 mt-2">Confirm Password </label><br>
+				<label for="password" class="h4 p-2 mt-2">Confirm Password </label>
 				<div>
-					<input type="password" placeholder="Confirmez votre Password" name="pwd-confirm" id="pwd-confirm" class="password-input" maxlength="40"><br>
+					<input type="password" placeholder="Confirmez votre Password" name="pwd-confirm" id="pwd-confirm" class="password-input" maxlength="40">
 				</div>
 				<button value="submit" name="validatetwo" id="validatetwo" class="btn-success justify-content-center rounded mt-3 d-flex align-self-center p-1 w-50">Submit</button>	
 				<?php if (isset($errorMessageChange3)) { ?> <p style="color: red;"><?= $errorMessageChange3 ; ?></p> <?php } ?>
