@@ -4,10 +4,10 @@
  
   <div class="gradient">
     <div class="icon">
-    <a href="#"><img class="mediaIcon" src="pictures/icons/facebook.svg" alt="facebook"></a>
-    <a href="#"><img class="mediaIcon" src="pictures/icons/twitter.svg" alt="twitter"></a>
-    <a href="#"><img class="mediaIcon" src="pictures/icons/github.svg" alt="github"></a>
-    <a href="#"><img class="mediaIcon" src="pictures/icons/rss.svg" alt="rss"></a>
+    <a href="https://www.facebook.com/badmintonbain/" target="_blank"><img class="mediaIcon" src="pictures/icons/facebook.svg" alt="facebook"></a>
+    <a href="https://twitter.com/hashtag/baindebretagne"  target="_blank"><img class="mediaIcon" src="pictures/icons/twitter.svg" alt="twitter"></a>
+    <a href="https://github.com/Bertrand2/Badminton-Club-Bain-de-Bretagne" target="_blank"><img class="mediaIcon" src="pictures/icons/github.svg" alt="github"></a>
+    <a href="https://www.baindebretagne.fr/systeme/flux-rss/" target="_blank"><img class="mediaIcon" src="pictures/icons/rss.svg" alt="rss"></a>
   </div>
   </div>
 
@@ -47,7 +47,7 @@
     <!-- UTC  -->
     <!-- START OF THE SECOND GREY BACKGROUND  -->
   <div class="grey2">
-    <p> Powered by Genesis </p>
+    <p> Powered by <a href="https://fr.wikipedia.org/wiki/Genesis_(groupe)" target="blank_">Genesis</a></p>
   </div>
   <!-- END OF THE SECOND GREY BACKRGOUND  -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
