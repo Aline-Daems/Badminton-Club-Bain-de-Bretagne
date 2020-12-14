@@ -1,8 +1,12 @@
 
-<div class="container-fluid col-12 col-md-9">
+<div class="container-fluid col-12 col-md-9 accordion" id="topicContent">
 
 
-    <?php $topicId = $_GET["id"]; ?>
+    <?php 
+        $topicId = $_GET["id"]; 
+        include("include/emojiSelector.php");
+        include("include/emojiDisplayer.php");
+    ?>
 
     <?php 
         $topicQuery = "SELECT topicTitle, topicAuthorId, isLocked FROM topics WHERE topicId = ?";
@@ -63,22 +67,13 @@ if($topic){
         <!-- LOCK TOPIC BUTTON -->
         <?php
             /*BUTTON SCRIPT*/
-            if(isset($_POST["lockTopic"])){
-                $lockQuery = "UPDATE topics SET isLocked = ? WHERE topicId = ?";
-                $lockResult = $bdd->prepare($lockQuery);
-                if($topic["isLocked"]){
-                    $lockResult->execute([0,$topicId]);
-                }else{
-                    $lockResult->execute([1,$topicId]);
-                }
-                header("Location: posts.php?id=$topicId");
-            }
-
+            $_SESSION["topicId"] = $topicId;
+            $_SESSION["isLocked"] = $topic["isLocked"];
             if(isset($_SESSION["userId"]) 
                 AND $topic["topicAuthorId"]==$_SESSION["userId"]
                 AND !$topic["isLocked"]){
         ?>
-            <form method="post" class="ml-3">
+            <form method="post" action="include/lockTopic.php" class="ml-3">
                 <button class="btn btn-primary reply" type="submit" name="lockTopic">
                     Lock Topic
                 </button>
@@ -88,7 +83,7 @@ if($topic){
                 AND $topic["topicAuthorId"]==$_SESSION["userId"]
                 AND $topic["isLocked"]){
         ?>
-            <form method="post" class="ml-3">
+            <form method="post" action="include/lockTopic.php" class="ml-3">
                 <button class="btn btn-primary reply" type="submit" name="lockTopic">
                     Unlock Topic
                 </button>
@@ -97,11 +92,11 @@ if($topic){
             }
         ?>
 
-        <form class="row ml-3 mr-3">
+        <form method="post" action="search.php?topicId=<?= $topicId; ?>" class="row ml-3 mr-3">
             <div>
                 <input type="text" id="search" name="search" placeholder="Search this topic ..." class="search">
             </div>
-            <button class="setting"><img class="settingIcon" src="pictures/icons/search.svg" alt="search"></button>
+            <button type="submit" name="searchButton" class="setting"><img class="settingIcon" src="pictures/icons/search.svg" alt="search"></button>
         </form>
         <button class="setting"><img class="settingIcon" src="pictures/icons/settings.svg" alt="settings"></button>
     </div>  <!--END OF BUTTONS-->
@@ -113,27 +108,29 @@ if($topic){
                 while ($postRow = $postResult->fetch(PDO::FETCH_ASSOC)) {
                     $lastPostUserId = $postRow['postUserId'];
                     $lastPostId = $postRow['postId'];
-                
+                    $lastPostMs = $postRow['postContent'];
                     $authorQuery = "SELECT * FROM users WHERE userId = ?";
                     $authorResult = $bdd->prepare($authorQuery);
                     $authorResult->execute(array($postRow["postUserId"]));
                     while($author = $authorResult->fetch(PDO::FETCH_ASSOC)){
     ?>
-    <div class="rounded  border container comments">
-		<div class="rounded-top row bg-success align-items-center">
-			<p class="col-8 m-0 date">  
-            <?= $postRow["postDate"]; $lastPostId = $postRow['postId']; $lastPostMs = $postRow['postContent']; ?>
-              <!-- Variables pour récupérer les valeurs des posts-->
-            </p>
-        </div> <!--END OF GREEN BOX WITH DATE-->
-        
-		<div class="row rounded box-comments">
-            <div class="avatar-border rounded">
+    <div class="rounded  border container comments p-0">
 
+        <!-- MESSAGE BOX HEADER -->
+		<div class="rounded-top row bg-success align-items-center justify-content-between pl-1 pr-1 m-0 position-relative">
+            <p class="m-0 date"> <?= $postRow["postDate"]; ?></p>
+            <!--tempWindowTester($postRow['postId']);-->
+            <?= fullEmojiSelector($postRow['postId']); ?>
+        </div>
+        
+        <!-- MESSAGE BOX CONTENT -->
+		<div class="row rounded box-comments m-0">
+            <div class="avatar-border rounded">
                 <div class="avatar-profile">
                     <div class="avatar mb-3">
-                        <?php 
-                        //call gravatar with the email from the poster-user
+                        <?php
+                        if($author['userPicture'] == 0){ 
+                            //call gravatar with the email from the poster-user
                         $email = $author["userEmail"]; 
                         $default = "https://cdn1.iconfinder.com/data/icons/sport-avatar-7/64/05-sports-badminton-sport-avatar-player-512.png";
                         $size = 120;
@@ -141,25 +138,33 @@ if($topic){
                         ?>
                         <!-- img with the URL created -->
                         <img class="avatar rounded-lg" src="<?php echo $grav_url; ?>" alt="picture" />
-                    
+                        <?php } else { 
+                            $img=base64_encode($author['userImage']);?>
+                            <div class="avatar"><img  alt="" class="img-responsive" src="data:image/jpg;charset=utf8mb4_bin;base64,<?php echo $img ?>"/></div>
+                        <?php } ?>
+                        
+                        
                     </div>
                 </div>   <!--END OF AVATAR PROFILE-->
 
-            <!--- PSEUDO ET TODO : RANK" ---> 
-            <div class="d-flex align-items-center col-12 justify-content-center">
-                <a  class="profile m-0" href="profile.php?id=<?= $author["userId"]; ?>"><?= $author["username"]; ?></a>
-            </div>
-            
-            
-
+                <!--- PSEUDO ET TODO : RANK" ---> 
+                <div class="d-flex align-items-center justify-content-center w-100">
+                    <a  class="profile text-center m-0" href="profile.php?id=<?= $author["userId"]; ?>"><?= $author["username"]; ?></a>
+                </div>
             </div>   <!-- END OF AVATAR BOX -->
-            <div class="content p-2" style="position:relative;">
-            <p class="col-12 m-0 p-2" <?= $postRow["postId"]; ?>><?= Michelf\MarkdownExtra::defaultTransform($postRow['postContent']); ?></p>
+
+            <div class="content p-2">
+                <div class="col-12 m-0 p-2" <?= $postRow["postId"]; ?>>
+                    <?= Michelf\MarkdownExtra::defaultTransform($postRow['postContent']); ?>
+                </div>
+
+                <div id="reaction-holder-<?= $postRow['postId']; ?>" class="reactions row">
+                    <?php displayEmojis($postRow['postId'], $bdd); ?> 
+                </div>
         
-            <div class="text-center divider">
-                <p class="signature mt-4"><?=  Michelf\MarkdownExtra::defaultTransform($author["userSignature"]); ?> </p>
-            </div>
-            
+                <div class="text-center divider">
+                    <div class="signature mt-4"><?=  Michelf\MarkdownExtra::defaultTransform($author["userSignature"]); ?> </div>
+                </div>
             </div> <!-- END OF CONTENT BOX-->
         </div> <!-- END OF BOX COMMENTS -->
     </div>   <!--END OF CONTAINER COMMENTS--> 
@@ -198,7 +203,7 @@ if($topic){
                 AND $topic["topicAuthorId"]==$_SESSION["userId"]
                 AND !$topic["isLocked"]){
         ?>
-            <form method="post" class="ml-3">
+            <form method="post" action="include/lockTopic.php" class="ml-3">
                 <button class="btn btn-primary reply" type="submit" name="lockTopic">
                     Lock Topic
                 </button>
@@ -208,7 +213,7 @@ if($topic){
                 AND $topic["topicAuthorId"]==$_SESSION["userId"]
                 AND $topic["isLocked"]){
         ?>
-            <form method="post" class="ml-3">
+            <form method="post" action="include/lockTopic.php" class="ml-3">
                 <button class="btn btn-primary reply" type="submit" name="lockTopic">
                     Unlock Topic
                 </button>
@@ -231,15 +236,22 @@ if($topic){
             Edit Post
         </button>
         </a>
+
+        <a href="#deletePost">
+        <button class="btn btn-primary reply" type="button" data-toggle="collapse" data-target="#deletePost" aria-expanded="false" aria-controls="#deletePost">
+        <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+        </a> 
     <?php
         } 
     ?>
-
+    <?php include("include/editPost.php"); ?>
+    <?php include("include/editDeletePost.php"); ?>
+    
     <?php include("include/postCreator.php");
 }else{
     include("include/no_post.php");
 }
     ?>
-    <?php include("include/editPost.php"); ?>
 </div>
 

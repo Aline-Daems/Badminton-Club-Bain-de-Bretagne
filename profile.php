@@ -21,7 +21,7 @@
    
 
       <!-- USER PROFIL -->
-      <div class="userContainer col-12 col-md-9">
+      <div class="container col-lg-9 col-12 col-md-8">
           <?php       
                 if (! empty($_GET['id'])){
                     include("include/user_profile.php");
@@ -30,6 +30,9 @@
                     include("include/profile_editor.php");
                 }else{ 
                   include("include/no_user.php");
+                }
+                if ((isset($_POST['validatetwo'])) || (isset($_POST['userSubmit'])) || (isset($_POST['usernameSubmit'])) || (isset($_POST['upload']))){
+                  header("Location: profile.php");
                 }
           ?>
       </div>
@@ -44,6 +47,7 @@
 
   <!-- FOOTER  -->
   <?php include("include/footer.php"); ?>
+  <script type="text/javascript" src="script/profile.js"></script>
   <script>
     const simplemde = new SimpleMDE({ element: document.getElementById("userSignature") });
 </script>

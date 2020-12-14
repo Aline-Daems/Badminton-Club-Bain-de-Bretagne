@@ -69,55 +69,34 @@ if (isset($_POST['validateone'])){
             <!-----------NEW MEMBER-------------->
             
                 <h3 class="Become">Become a member</h3>
-                <button type="submit" name="becomeaMembre" class="w-100 btn btn-success">
-                <?php echo "<a href='register.php'> <strong>Sign up</strong> ! </a>" ?>
-                </button>
+                <a href='register.php'> <button type="submit" name="becomeaMembre" class="w-100 btn btn-success">
+                <?php echo " <strong>Sign up</strong> !" ?>
+                </button></a>
                 </br>
             <?php 
             }else{
             ?>
                 </br>
                 <h3 class="Become">My profile</h3>
-                <button type="submit" name="myProfil" class="w-100 btn btn-success">
-                <?php echo "<a href='profile.php'> <strong>Complete your profile !</strong> </a>" ?>
-                </button><br /><br />
-                <button type="submit" name="myProfil" class="w-100 btn btn-success">
-                <?php echo "<a href='destroy_session.php'> <strong>Log out</strong> </a>" ?>
-                </button>
+                <a href='profile.php'> <button type="submit" name="myProfil" class="w-100 btn btn-success">
+                <?php echo "<strong>Complete your profile !</strong> " ?>
+                </button></a><br /><br />
+                <a href='destroy_session.php'> <button type="submit" name="myProfil" class="w-100 btn btn-success">
+                <?php echo "<strong>Log out</strong> " ?>
+                </button></a>
             <?php 
             }
             ?>
             
 
-      <!-----------LAST POSTS -------------->
-          <h3 class="titlelastPost">Last Post</h3> 
-          <?php
-          $lastPost = $bdd->prepare('SELECT postContent, postTopicId FROM posts ORDER BY postId DESC LIMIT 4');
-          $lastPost->execute();
+        <form method="post" action="search.php" class="row m-1 mt-5 w-100">
+          <input type="text" id="search" name="search" placeholder="Search this website…" class="search p-0 col-10">
+          <button type="submit" name="searchButton" class="setting"><img class="settingIcon" src="pictures/icons/search.svg" alt="search"></button>
+        </form>
+            
 
-          while ($post = $lastPost->fetch(PDO::FETCH_ASSOC)){
-            $lastTopic = $bdd->prepare('SELECT * FROM topics WHERE topicId = ?');
-            $lastTopic->execute([$post['postTopicId']]);
-            $topicTitle=$lastTopic->fetch(PDO::FETCH_ASSOC);
-          ?>
-              <div class="card bg-light mb-3 lastpost">
-                <div class="card-header headergreen">
-                <strong>
-                <!----- TEST ----->
-                <a class="poststitle" href="posts.php?id=<?= $topicTitle["topicId"]; ?>">
-					      <?= $topicTitle["topicTitle"]; ?>
-			        	</a>
-                </strong>
-                </div>
-                <div class="card-body">
-                  <div class="card-text">
-                      <?= Michelf\MarkdownExtra::defaultTransform($post['postContent']); ?>
-                  </div>
-                </div>
-              </div>
-          <?php
-          }
-        ?>
+      <!-----------LAST POSTS -------------->
+         <?php include("aside_lastpost.php"); ?>
 
         <!-----------LAST ACTIVE USERS -------------->
 <h3 class="newmember">New members</h3> 
@@ -125,16 +104,25 @@ if (isset($_POST['validateone'])){
     <?php
     $userId = $bdd->prepare('SELECT * FROM users ORDER BY userId DESC LIMIT 3');
     $userId->execute();
-    while ($userpost = $userId->fetch(PDO::FETCH_ASSOC)){
-      $email = $userpost["userEmail"]; 
-      $default = "https://cdn1.iconfinder.com/data/icons/sport-avatar-7/64/05-sports-badminton-sport-avatar-player-512.png";
-      $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default );
-    ?>
+    while ($userpost = $userId->fetch(PDO::FETCH_ASSOC)){ ?>
     <div class="container">
       <div class="row p-2">
         <div class="col-3 justify-content-center">
-          <!-- img with the URL created -->
-          <img class="newmemberPic" src="<?php echo $grav_url; ?>" alt="picture" />
+          <?php 
+          if($userpost['userPicture'] == 0){ 
+            //call gravatar with the email from the poster-user
+        $email = $userpost["userEmail"]; 
+        $default = "https://cdn1.iconfinder.com/data/icons/sport-avatar-7/64/05-sports-badminton-sport-avatar-player-512.png";
+        $size = 50;
+        $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
+        ?>
+        <!-- img with the URL created -->
+        <img class="newmemberPic rounded-lg" src="<?php echo $grav_url; ?>" alt="picture" />
+        <?php } else { 
+            $img=base64_encode($userpost['userImage']);?>
+            <div class="newmemberPic"><img class="newmemberPic" alt="" class="img-responsive" src="data:image/jpg;charset=utf8mb4_bin;base64,<?php echo $img ?>"/></div>
+        <?php }
+      ?>
         </div>
         <div class="col-9 d-flex align-items-center">
           <a  class="profile h4 poststitle" href="profile.php?id=<?= $userpost["userId"]; ?>"><?= $userpost['username']; ?></a>  
@@ -145,4 +133,5 @@ if (isset($_POST['validateone'])){
       }
     ?>
   </div>  
+
 

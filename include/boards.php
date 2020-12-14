@@ -36,43 +36,41 @@
 							$totalTopic = $totalTopicResult->fetch();
 						}
 				?>
-				<section class="col-12 col-md-4" style="max-width: 540px;">
+				<section class="col-12 col-md-6 col-lg-4">
 					<div class="card mb-3">
 						<a href="forum.php?id=<?= $forumRow["forumId"]; ?>" class="card-body profile">
-							<div class="row no-gutters">
-								<div class="col-3">
+							<div class="row no-gutters justify-content-center align-items-center">
+								<div class="col-1 col-md-3">
 									<img src="pictures/logo.png<?= $forumRow["forumPicSrc"]; ?>" class="card-img" alt="...">
 								</div>
-								<div class="col-9">
-									<h5 class="card-title"><?= $forumRow["forumName"]; ?></h5>
-									<p class="card-text"><?= $forumRow["forumDesc"]; ?></p>
+								<div class="col-12 col-md-9">
+									<h5 class="card-title m-0"><?= $forumRow["forumName"]; ?></h5>
 								</div>
 							</div>
-							<div class="row">
-								<p class="text-muted">
-									<?= $totalTopic["total"]; ?> topics
-									<br>
-									Last topic created  
-									<?php 
-										$currentDate = strtotime(date("Y-m-d H:i:s"));
-										$postDate = strtotime(date($lastTopic['topicCreationDate']));
-										$seconds_ago = ($currentDate - $postDate);
-										if ($seconds_ago >= 31536000) {
-											echo intval($seconds_ago / 31536000) . " year(s) ago";
-										} else if ($seconds_ago >= 2419200) {
-											echo intval($seconds_ago / 2419200) . " month(s) ago";
-										} else if ($seconds_ago >= 86400) {
-											echo intval($seconds_ago / 86400) . " day(s) ago";
-										} else if ($seconds_ago >= 3600) {
-											echo intval($seconds_ago / 3600) . " hour(s) ago";
-										} else if ($seconds_ago >= 60) {
-											echo intval($seconds_ago / 60) . " minute(s) ago";
-										} else {
-											echo "Less than a minute ago";
-										}
-									?>
-								</p>
-							</div>
+							<p class="h6 text-muted text-left mt-2"><?= $forumRow["forumDesc"]; ?></p>
+							<p class="text-muted text-left w-100" style="font-size: 0.8rem;">
+								<?= $totalTopic["total"]; ?> topics
+								<br>
+								Last topic created  
+								<?php 
+									$currentDate = strtotime(date("Y-m-d H:i:s"));
+									$postDate = strtotime(date($lastTopic['topicCreationDate']));
+									$seconds_ago = ($currentDate - $postDate);
+									if ($seconds_ago >= 31536000) {
+										echo intval($seconds_ago / 31536000) . " year(s) ago";
+									} else if ($seconds_ago >= 2419200) {
+										echo intval($seconds_ago / 2419200) . " month(s) ago";
+									} else if ($seconds_ago >= 86400) {
+										echo intval($seconds_ago / 86400) . " day(s) ago";
+									} else if ($seconds_ago >= 3600) {
+										echo intval($seconds_ago / 3600) . " hour(s) ago";
+									} else if ($seconds_ago >= 60) {
+										echo intval($seconds_ago / 60) . " minute(s) ago";
+									} else {
+										echo "Less than a minute ago";
+									}
+								?>
+							</p>
 						</a>
 					</div>
 				</section>
@@ -126,67 +124,19 @@
 									$totalTopic = $totalTopicResult->fetch();
 								}
 						?>
-							<section class="col-12 col-md-4" style="max-width: 540px;">
+							<section class="col-12 col-md-6 col-lg-4">
 								<div class="card mb-3">
 									<a href="forum.php?id=<?= $forumRow["forumId"]; ?>" class="card-body profile">
-										<div class="row no-gutters">
-											<div class="col-3">
+										<div class="row no-gutters justify-content-center align-items-center">
+											<div class="col-1 col-md-3">
 												<img src="pictures/logo.png<?= $forumRow["forumPicSrc"]; ?>" class="card-img" alt="...">
 											</div>
-											<div class="col-9">
-												<h5 class="card-title"><?= $forumRow["forumName"]; ?></h5>
-												<p class="card-text"><?= $forumRow["forumDesc"]; ?></p>
+											<div class="col-12 col-md-9">
+												<h5 class="card-title m-0"><?= $forumRow["forumName"]; ?></h5>
 											</div>
 										</div>
-										<div class="row">
-											<p class="text-muted">
-												<?= $totalTopic["total"]; ?> topics
-												<br>
-												Last topic created  
-												<?php 
-													$currentDate = strtotime(date("Y-m-d H:i:s"));
-													$postDate = strtotime(date($lastTopic['topicCreationDate']));
-													$seconds_ago = ($currentDate - $postDate);
-													if ($seconds_ago >= 31536000) {
-														echo intval($seconds_ago / 31536000) . " year(s) ago";
-													} else if ($seconds_ago >= 2419200) {
-														echo intval($seconds_ago / 2419200) . " month(s) ago";
-													} else if ($seconds_ago >= 86400) {
-														echo intval($seconds_ago / 86400) . " day(s) ago";
-													} else if ($seconds_ago >= 3600) {
-														echo intval($seconds_ago / 3600) . " hour(s) ago";
-													} else if ($seconds_ago >= 60) {
-														echo intval($seconds_ago / 60) . " minute(s) ago";
-													} else {
-														echo "Less than a minute ago";
-													}
-												?>
-											</p>
-										</div>
-									</a>
-								</div>
-							</section>
-					<?php        
-						}  //fin de while
-					?>
-				</div>
-			<?php
-				}else{ ?>
-				<div class="row">
-						<section class="col-12 col-md-4" style="max-width: 540px;">
-							<div class="card mb-3">
-								<a href="./secretissecret.php" class="card-body profile">
-									<div class="row no-gutters">
-										<div class="col-3">
-											<img src="./pictures/logo.png" class="card-img" alt="...">
-										</div>
-										<div class="col-9">
-											<h5 class="card-title">Restricted area</h5>
-											<p class="card-text">Authorized personnel only</p>
-										</div>
-									</div>
-									<div class="row">
-										<p class="text-muted">
+										<p class="h6 text-muted text-left mt-2"><?= $forumRow["forumDesc"]; ?></p>
+										<p class="text-muted text-left w-100" style="font-size: 0.8rem;">
 											<?= $totalTopic["total"]; ?> topics
 											<br>
 											Last topic created  
@@ -209,7 +159,51 @@
 												}
 											?>
 										</p>
+									</a>
+								</div>
+							</section>
+					<?php        
+						}  //fin de while
+					?>
+				</div>
+			<?php
+				}else{ ?>
+				<div class="row">
+					<section class="col-12 col-md-6 col-lg-4">
+							<div class="card mb-3">
+								<a href="./secretissecret.php" class="card-body profile">
+									<div class="row no-gutters justify-content-center align-items-center">
+										<div class="col-1 col-md-3">
+											<img src="pictures/logo.png" class="card-img" alt="...">
+										</div>
+										<div class="col-12 col-md-9">
+											<h5 class="card-title m-0">Restricted area</h5>
+										</div>
 									</div>
+									<p class="h6 text-muted text-left mt-2">Authorized personnel only</p>
+									<p class="text-muted text-left w-100" style="font-size: 0.8rem;">
+										<?= $totalTopic["total"]; ?> topics
+										<br>
+										Last topic created  
+										<?php 
+											$currentDate = strtotime(date("Y-m-d H:i:s"));
+											$postDate = strtotime(date($lastTopic['topicCreationDate']));
+											$seconds_ago = ($currentDate - $postDate);
+											if ($seconds_ago >= 31536000) {
+												echo intval($seconds_ago / 31536000) . " year(s) ago";
+											} else if ($seconds_ago >= 2419200) {
+												echo intval($seconds_ago / 2419200) . " month(s) ago";
+											} else if ($seconds_ago >= 86400) {
+												echo intval($seconds_ago / 86400) . " day(s) ago";
+											} else if ($seconds_ago >= 3600) {
+												echo intval($seconds_ago / 3600) . " hour(s) ago";
+											} else if ($seconds_ago >= 60) {
+												echo intval($seconds_ago / 60) . " minute(s) ago";
+											} else {
+												echo "Less than a minute ago";
+											}
+										?>
+									</p>
 								</a>
 							</div>
 						</section>

@@ -11,15 +11,19 @@
 ?>
         <div class="user-container">
           <div class="name">Name :</div>
-          <div class="mail">Email :</div>
           <div class="signature2">Signature :</div>
           <div class="username"><?php if($user){echo $user["username"];} ?></div>
-          <div class="userEmail"><?php if($user){echo $user['userEmail'];}?></div>
           <div class="signatureTxt"><?php if($user){echo $user['userSignature'];}?></div>
-          <div class="w-25 picGravatar"><?php include 'include/profile_gravatar.php' ;?></div>
-          <div class="modifName"></div>
-          <div class="modifEmail"></div>
-          <div class="modfiSignature"></div>          
+          <?php if($user['userPicture'] == 0){ 
+            $email = $user["userEmail"]; 
+            $default = "https://cdn1.iconfinder.com/data/icons/sport-avatar-7/64/05-sports-badminton-sport-avatar-player-512.png";
+            $size = 50;
+            $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size; ?>
+            <img class="avatar rounded-lg" src="<?php echo $grav_url; ?>" alt="picture" />
+          <?php } else { 
+            $img=base64_encode($user['userImage']);?>
+            <div><img class="avatar" alt="" style="width:100px" class="img-responsive" src="data:image/jpg;charset=utf8mb4_bin;base64,<?php echo $img ?>"/></div>
+          <?php } ?>        
         </div>
         
 <?php
