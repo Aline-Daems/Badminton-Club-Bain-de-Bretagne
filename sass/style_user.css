@@ -5,12 +5,11 @@
 
 .user-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
-    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-columns: 2fr 1fr 4fr;
+    grid-template-rows: 4rem 1fr;
     gap: 0px 15px;
     grid-template-areas:
       "picGravatar name username"
-      "picGravatar mail userEmail"
       "picGravatar signature2 signatureTxt";
     padding: 25px;
     margin: 25px; 
@@ -21,25 +20,14 @@
   .name { grid-area: name; 
         font-weight: bold;}
   
-  .mail { grid-area: mail;  
-    font-weight: bold;}
-  
   .signature2 { grid-area: signature2;  
     font-weight: bold;}
   
   .username { grid-area: username; }
   
-  .userEmail { grid-area: userEmail; }
-  
   .signatureTxt { grid-area: signatureTxt; }
   
   .picGravatar { grid-area: picGravatar; }
-  
-  .modifName { grid-area: modifName; }
-  
-  .modifEmail { grid-area: modifEmail; }
-  
-  .modifSignature { grid-area: modifSignature; }
 
   .ModifGravatar {
     margin-top: 25px;
