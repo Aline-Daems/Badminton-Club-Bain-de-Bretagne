@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
 <?php include("include/head.php"); ?>
+<link rel="stylesheet" href="sass/posts.css">
 </head>
 <body>
 	<!-- HEADER  -->

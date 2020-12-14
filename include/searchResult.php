@@ -8,7 +8,7 @@
 		if(isset($_GET["topicId"])) {
 			$topicId = $_GET["topicId"];
 
-			?><h3>Rusults for the search of <strong><?= $search; ?></strong> :</h3><?php
+			?><h3>Results for the search of <strong><?= $search; ?></strong> :</h3><?php
 		
 			$searchQuery = "SELECT posts.postContent, posts.postDate, users.userId, users.username
 				FROM posts 
@@ -42,17 +42,19 @@
 			/* IF THERE IS NO RESULT */
 			} else {
 				?>
-					<p>
-						Sadly, we found nothing concerning your search.
-					</p>
-					<p>
-						You can go back on the
-						<a href="posts.php?id=<?= $topicId; ?>">
-							previous page
-						</a> 
-						or go back to the 
-						<a href="index.php">home page</a>.
-					</p>
+					<div class="noPost">
+					<h3 class="Become">Sadly, we found nothing concerning your search.</h3>
+
+					<button type="submit" name="myProfil" class="w-100 btn btn-success">
+					<a href="<?php echo $_SERVER["HTTP_REFERER"]; ?>"><strong>Previous page</strong></a>
+					</button>
+					
+					<button type="submit" name="myProfil" class="w-100 btn btn-success">
+					<?php echo "<a href='index.php'> <strong>Let's go to the boards</strong> </a>" ?>
+					</button>
+
+					</div>
+
 				<?php
 			}
 		
@@ -60,7 +62,7 @@
 
 			$forumId = $_GET["forumId"];
 
-			?><h3>Rusults for the search of <strong><?= $search; ?></strong> :</h3><?php
+			?><h3>Results for the search of <strong><?= $search; ?></strong> :</h3><?php
 
 			$searchQuery = "SELECT topics.topicId, topics.topicTitle, topics.topicAuthorId, users.username
 				FROM topics
@@ -146,24 +148,26 @@
 			/* IF THERE IS NO RESULT */
 			if ($gotResults == 0) {
 				?>
-					<p>
-						Sadly, we found nothing concerning your search.
-					</p>
-					<p>
-						You can go back on the
-						<a href="forum.php?id=<?= $forumId; ?>">
-							previous page
-						</a> 
-						or go back to the 
-						<a href="index.php">home page</a>.
-					</p>
+				<div class="noPost">
+					<h3 class="Become">Sadly, we found nothing concerning your search.</h3>
+
+					<button type="submit" name="myProfil" class="w-100 btn btn-success">
+					<a href="<?php echo $_SERVER["HTTP_REFERER"]; ?>"><strong>Previous page</strong></a>
+					</button>
+					
+					<button type="submit" name="myProfil" class="w-100 btn btn-success">
+					<?php echo "<a href='index.php'> <strong>Let's go to the boards</strong> </a>" ?>
+					</button>
+
+					</div>
+				
 				<?php
 			}
 
 		} else {
 			$gotResults = 0;
 		
-			?><h3 class="mb-3">Rusults for the search of <strong><?= $search; ?></strong> :</h3><?php
+			?><h3 class="mb-3">Results for the search of <strong><?= $search; ?></strong> :</h3><?php
 
 			$searchQuery = "SELECT forumId, forumName, forumBoardId
 			FROM forums
@@ -213,6 +217,18 @@
 				?><h4 class="mt-5">Topics : </h4><?php
 				do {
 					?>
+									<div class="noPost">
+					<h3 class="Become">Sadly, we found nothing concerning your search.</h3>
+
+					<button type="submit" name="myProfil" class="w-100 btn btn-success">
+					<a href="<?php echo $_SERVER["HTTP_REFERER"]; ?>"><strong>Previous page</strong></a>
+					</button>
+					
+					<button type="submit" name="myProfil" class="w-100 btn btn-success">
+					<?php echo "<a href='index.php'> <strong>Let's go to the boards</strong> </a>" ?>
+					</button>
+
+					</div>
 						<div class="card bg-light mb-3 lastpost">
 							<div class="card-header">
 								<strong>
@@ -303,17 +319,20 @@
 			/* IF THERE IS NO RESULT */
 			if ($gotResults == 0) {
 				?>
-					<p>
-						Sadly, we found nothing concerning your search.
-					</p>
-					<p>
-						You can go back on the
-						<a href="forum.php?id=<?= $forumId; ?>">
-							previous page
-						</a> 
-						or go back to the 
-						<a href="index.php">home page</a>.
-					</p>
+
+					<div class="noPost">
+					<h3 class="Become">Sadly, we found nothing concerning your search.</h3>
+
+					<button type="submit" name="myProfil" class="w-100 btn btn-success">
+					<a href="<?php echo $_SERVER["HTTP_REFERER"]; ?>"><strong>Previous page</strong></a>
+					</button>
+					
+					<button type="submit" name="myProfil" class="w-100 btn btn-success">
+					<?php echo "<a href='index.php'> <strong>Let's go to the boards</strong> </a>" ?>
+					</button>
+
+					</div>
+					
 				<?php
 			}
 
