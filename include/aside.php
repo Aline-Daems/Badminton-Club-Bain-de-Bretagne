@@ -32,7 +32,7 @@ if (isset($_POST['validateone'])){
 }
 ?>
 
-    <aside class="col-lg-3 col-md-4 col-12">
+    <aside class="col-lg-3 col-12">
                     <!-----------SEARCH-------------->
                 <!-- <form action="" method="POST">
                   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -89,10 +89,8 @@ if (isset($_POST['validateone'])){
             ?>
             
 
-        <form method="post" action="search.php" class="row ml-3 mr-3 mt-5">
-          <div>
-            <input type="text" id="search" name="search" placeholder="Search this website ..." class="search">
-          </div>
+        <form method="post" action="search.php" class="row m-1 mt-5 w-100">
+          <input type="text" id="search" name="search" placeholder="Search this website…" class="search p-0 col-10">
           <button type="submit" name="searchButton" class="setting"><img class="settingIcon" src="pictures/icons/search.svg" alt="search"></button>
         </form>
             
@@ -135,4 +133,5 @@ if (isset($_POST['validateone'])){
       }
     ?>
   </div>  
+
 
