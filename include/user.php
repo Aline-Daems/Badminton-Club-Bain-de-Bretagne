@@ -8,7 +8,7 @@
         
         <div class="card m-4">
           <div class="row row-cols-2">
-            <div class="col-6 p-5 d-flex align-items-center">
+            <div class="col-lg-6 col-md-12 col-12  p-5 d-flex align-items-center">
               <form method="post">
                 <ul style="list-style-type:none">
                   <?php 
@@ -31,11 +31,11 @@
                 </ul>
               </form>
             </div>
-            <div class="col-6 card-body">
+            <div class="col-lg-6 col-md-12 col-12 card-body">
               <p class="mb-3">Name : <?= $user['username'] ?></p>
               <p class="mb-3">Email : <?= $user['userEmail'] ?></p>
-              <div class="mb-3">Signature : 
-                <div class="col-8">
+              <div class="mb-3" >Signature : 
+                <div class="text-center">
                   <?= Michelf\MarkdownExtra::defaultTransform($user["userSignature"]); ?>
                 </div>
               </div>
