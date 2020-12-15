@@ -31,9 +31,7 @@
                 }else{ 
                   include("include/no_user.php");
                 }
-                if ((isset($_POST['validatetwo'])) || (isset($_POST['userSubmit'])) || (isset($_POST['usernameSubmit'])) || (isset($_POST['upload']))){
-                  header("Location: profile.php");
-                }
+                
           ?>
       </div>
 
